@@ -20,6 +20,7 @@ script:
   - npm run build
 
 after_script:
+  - ls
   - cd ./dist
   - git init
   - git config user.name "${U_NAME}"
