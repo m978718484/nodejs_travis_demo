@@ -12,6 +12,7 @@ cache:
 # S: Build Lifecycle
 install:
   - npm install
+  - ls
 
 before_script:
 
@@ -20,7 +21,6 @@ script:
   - npm run build
 
 after_script:
-  - ls
   - cd ./dist
   - git init
   - git config user.name "${U_NAME}"
