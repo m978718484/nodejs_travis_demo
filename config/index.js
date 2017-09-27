@@ -7,7 +7,11 @@ module.exports = {
     index: path.resolve(__dirname, '../dist/index.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
+<<<<<<< HEAD
     assetsPublicPath: '/nodejs_travis_demo/',
+=======
+    assetsPublicPath: './',
+>>>>>>> 12f71d9ea11a79d89873be1906ae620d82477e91
     productionSourceMap: true,
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
