@@ -15,14 +15,6 @@
     </grid>
   </div>
 </template>
-
-<i18n>
-Grid:
-  zh-CN: 九宫格
-Go to Cell:
-  zh-CN: 跳转到Cell
-</i18n>
-
 <script>
 import { Grid, GridItem, GroupTitle } from 'vux'
 export default {
@@ -38,11 +30,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.grid-center {
-  display: block;
-  text-align: center;
-  color: #666;
-}
-</style>
