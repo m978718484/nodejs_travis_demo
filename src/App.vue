@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div>
-    <swiper :list="demo03_list" auto style="width:80%;margin:0 auto;" height="180px" dots-class="custom-bottom" dots-position="center"></swiper>
+    <swiper :list="demo03_list" auto style="width:100%;margin:0 auto;" :aspect-ratio="300/800" dots-class="custom-bottom" dots-position="center"></swiper>
   </div>
 </template>
 
