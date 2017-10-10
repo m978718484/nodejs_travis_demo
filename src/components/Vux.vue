@@ -1,5 +1,25 @@
 <template>
   <div>
+    <search
+    @result-click="resultClick"
+    @on-change="getResult"
+    :results="results"
+    v-model="value"
+    position="absolute"
+    auto-scroll-to-top top="0px"
+    @on-focus="onFocus"
+    @on-cancel="onCancel"
+    @on-submit="onSubmit"
+    ref="search"></search>
+    <swiper auto height="30px" direction="vertical" :interval=2000 class="text-scroll" :show-dots="false">
+      <swiper-item><p>义务爱了 完成传奇世界H5-王者归来任务 获得20金币</p></swiper-item>
+      <swiper-item><p>基本世神 兑换《传奇世界H5》畅玩级礼包 消耗30金币</p></swiper-item>
+      <swiper-item><p>零哥章魚 完成传奇世界H5-王者归来任务 获得30金币</p></swiper-item>
+      <swiper-item><p>做迎而為 兑换【饿了么】畅享美食红包 消耗20金币</p></swiper-item>
+      <swiper-item><p>只知道不知道 兑换【饿了么】畅享美食红包 消耗20金币</p></swiper-item>
+      <swiper-item><p>基本世神 兑换《传奇世界H5》畅玩级礼包 消耗30金币</p></swiper-item>
+    </swiper>
+    <router-view></router-view>
     <grid>
       <grid-item link="/component/cell" label="公告">
         <img slot="icon" src="../assets/home.png">
@@ -30,7 +50,7 @@
   </div>
 </template>
 <script>
-import { Grid, GridItem, GroupTitle, Cell, Marquee, MarqueeItem } from 'vux'
+import { Grid, GridItem, GroupTitle, Marquee, MarqueeItem, Swiper, Search } from 'vux'
 
 export default {
   data () {
@@ -42,7 +62,8 @@ export default {
     Grid,
     GridItem,
     GroupTitle,
-    Cell,
+    Search,
+    Swiper,
     Marquee,
     MarqueeItem
   },

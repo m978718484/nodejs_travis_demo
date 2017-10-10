@@ -2,31 +2,11 @@
   <div id="app">
     <div>
     <swiper :list="demo03_list" auto style="width:80%;margin:0 auto;" height="180px" dots-class="custom-bottom" dots-position="center"></swiper>
-    <search
-    @result-click="resultClick"
-    @on-change="getResult"
-    :results="results"
-    v-model="value"
-    position="absolute"
-    auto-scroll-to-top top="0px"
-    @on-focus="onFocus"
-    @on-cancel="onCancel"
-    @on-submit="onSubmit"
-    ref="search"></search>
-    <swiper auto height="30px" direction="vertical" :interval=2000 class="text-scroll" :show-dots="false">
-      <swiper-item><p>义务爱了 完成传奇世界H5-王者归来任务 获得20金币</p></swiper-item>
-      <swiper-item><p>基本世神 兑换《传奇世界H5》畅玩级礼包 消耗30金币</p></swiper-item>
-      <swiper-item><p>零哥章魚 完成传奇世界H5-王者归来任务 获得30金币</p></swiper-item>
-      <swiper-item><p>做迎而為 兑换【饿了么】畅享美食红包 消耗20金币</p></swiper-item>
-      <swiper-item><p>只知道不知道 兑换【饿了么】畅享美食红包 消耗20金币</p></swiper-item>
-      <swiper-item><p>基本世神 兑换《传奇世界H5》畅玩级礼包 消耗30金币</p></swiper-item>
-    </swiper>
-    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import { Swiper, SwiperItem, Search, Group, Cell, XButton } from 'vux'
+import { Swiper, SwiperItem, Group, XButton } from 'vux'
 const imgList = [
   'http://srmmx.com/images/index/banner.jpg',
   'http://srmmx.com/images/index/banner-1.jpg',
@@ -44,9 +24,7 @@ export default {
   components: {
     Swiper,
     SwiperItem,
-    Search,
     Group,
-    Cell,
     XButton
   },
   data () {
