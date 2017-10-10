@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div>
-    <img src="../assets/filter_bg.jpg" style="width: 100%">
+    <img src="./assets/filter_bg.jpg" style="width: 100%">
     <search
     @result-click="resultClick"
     @on-change="getResult"
