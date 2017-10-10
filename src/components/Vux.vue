@@ -1,40 +1,16 @@
 <template>
   <div>
-    <group-title>2 columns</group-title>
-    <grid>
-      <grid-item :label="$t('Grid')" v-for="i in 2" :key="i">
-        <img slot="icon" src="../assets/grid_icon.png">
-      </grid-item>
-    </grid>
     <group-title>3 columns</group-title>
     <grid>
       <grid-item link="/component/cell" :label="$t('Go to Cell')">
-        <img slot="icon" src="../assets/grid_icon.png">
+        <img slot="icon" src="../assets/home.png">
       </grid-item>
       <grid-item :link="{ path: '/component/cell'}" :label="$t('Go to Cell')">
-        <img slot="icon" src="../assets/grid_icon.png">
+        <img slot="icon" src="../assets/home.png">
       </grid-item>
       <grid-item link="/component/cell" @on-item-click="onItemClick">
-        <img slot="icon" src="../assets/grid_icon.png">
+        <img slot="icon" src="../assets/home.png">
         <span slot="label">{{ $t('Go to Cell') }}</span>
-      </grid-item>
-    </grid>
-    <group-title>4 columns</group-title>
-    <grid>
-      <grid-item :label="$t('Grid')" v-for="i in 4" :key="i">
-        <img slot="icon" src="../assets/grid_icon.png">
-      </grid-item>
-    </grid>
-    <group-title>custom content</group-title>
-    <grid>
-      <grid-item v-for="i in 5" :key="i">
-        <span class="grid-center">{{i}}</span>
-      </grid-item>
-    </grid>
-    <group-title>custom col</group-title>
-    <grid :cols="3">
-      <grid-item v-for="i in 6" :key="i">
-        <span class="grid-center">{{i}}</span>
       </grid-item>
     </grid>
   </div>
