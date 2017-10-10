@@ -6,7 +6,7 @@
     :results="results"
     v-model="value"
     position="absolute"
-    auto-scroll-to-top top="0px"
+    auto-scroll-to-top top="20px"
     @on-focus="onFocus"
     @on-cancel="onCancel"
     @on-submit="onSubmit"
