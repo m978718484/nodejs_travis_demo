@@ -1,6 +1,5 @@
 <template>
   <div>
-    <group-title>3 columns</group-title>
     <grid>
       <grid-item link="/component/cell" label="公告">
         <img slot="icon" src="../assets/home.png">
