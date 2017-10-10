@@ -12,6 +12,8 @@ cache:
 # S: Build Lifecycle
 install:
   - npm install
+  - npm install vux --save
+  - npm install vux-loader --save-dev
 
 before_script:
 
