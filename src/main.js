@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import { AlertPlugin, ToastPlugin, Marquee, MarqueeItem} from 'vux'
+import { AlertPlugin, ToastPlugin, Marquee, MarqueeItem } from 'vux'
 
 Vue.use(AlertPlugin)
 Vue.use(ToastPlugin)

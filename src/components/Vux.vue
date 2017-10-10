@@ -57,7 +57,7 @@ export default {
     },
     onClick (i) {
       console.log(i)
-    }    
+    }
   }
 }
 </script>
