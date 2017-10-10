@@ -37,6 +37,7 @@ const imgList = [
 export default {
   name: 'app',
   components: {
+    Swiper,
     Search,
     Group,
     Cell,
