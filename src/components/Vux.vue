@@ -25,13 +25,9 @@
         <span slot="label">关于我们</span>
       </grid-item>
     </grid>
-    <group>
-      <cell title="公告">
-        <marquee>
-          <marquee-item v-for="i in 5" :key="i" @click.native="onClick(i)">公告 {{i}}</marquee-item>
-        </marquee>
-      </cell>
-    </group>
+    <marquee>
+      <marquee-item v-for="i in asyncCount" :key="i" @click.native="onClick(i)" class="align-middle">hello world {{i}}</marquee-item>
+    </marquee>
   </div>
 </template>
 <script>
