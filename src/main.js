@@ -3,10 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import vuexI18n from 'vuex-i18n'
 import { AlertPlugin, ToastPlugin } from 'vux'
 
-Vue.use(vuexI18n.plugin, store)
 Vue.use(AlertPlugin)
 Vue.use(ToastPlugin)
 
