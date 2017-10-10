@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <div>
-    <img src="./assets/filter_bg.jpg" style="width: 100%">
     <swiper :list="demo03_list" auto style="width:80%;margin:0 auto;" height="180px" dots-class="custom-bottom" dots-position="center"></swiper>
     <search
     @result-click="resultClick"
