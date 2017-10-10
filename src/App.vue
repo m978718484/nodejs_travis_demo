@@ -26,7 +26,7 @@ export default {
     Group,
     Cell,
     XButton
-  },
+  }
 }
 </script>
 
