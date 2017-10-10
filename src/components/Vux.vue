@@ -34,6 +34,11 @@
 import { Grid, GridItem, GroupTitle, Cell, Marquee, MarqueeItem } from 'vux'
 
 export default {
+  data () {
+    return {
+      asyncCount: 0
+    }
+  },
   components: {
     Grid,
     GridItem,
