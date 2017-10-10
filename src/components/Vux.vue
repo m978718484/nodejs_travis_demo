@@ -25,20 +25,39 @@
         <span slot="label">关于我们</span>
       </grid-item>
     </grid>
+    <group>
+      <cell title="公告">
+        <marquee>
+          <marquee-item v-for="i in 5" :key="i" @click.native="onClick(i)">公告 {{i}}</marquee-item>
+        </marquee>
+      </cell>
+    </group>
   </div>
 </template>
 <script>
-import { Grid, GridItem, GroupTitle } from 'vux'
+import { Grid, GridItem, GroupTitle, Cell, Marquee, MarqueeItem } from 'vux'
+
 export default {
   components: {
     Grid,
     GridItem,
-    GroupTitle
+    GroupTitle,
+    Cell,
+    Marquee,
+    MarqueeItem
+  },
+  mounted () {
+    setTimeout(() => {
+      this.asyncCount = 5
+    }, 1000)
   },
   methods: {
     onItemClick () {
       console.log('on item click')
-    }
+    },
+    onClick (i) {
+      console.log(i)
+    }    
   }
 }
 </script>
