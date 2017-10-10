@@ -29,10 +29,10 @@
 <script>
 import { Swiper, SwiperItem, Search, Group, Cell, XButton } from 'vux'
 const imgList = [
-  './assets/banner.jpg',
-  './assets/banner-1.jpg',
-  './assets/banner-2.jpg',
-  './assets/banner-3.jpg'
+  'http://srmmx.com/images/index/banner.jpg',
+  'http://srmmx.com/images/index/banner-1.jpg',
+  'http://srmmx.com/images/index/banner-3.jpg',
+  'http://srmmx.com/images/index/banner-5.jpg'
 ]
 
 const demoList = imgList.map((one, index) => ({
