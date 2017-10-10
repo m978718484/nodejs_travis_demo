@@ -18,8 +18,15 @@
 </template>
 
 <script>
+import { Search, Group, Cell, XButton } from 'vux'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    Search,
+    Group,
+    Cell,
+    XButton
+  },
 }
 </script>
 
