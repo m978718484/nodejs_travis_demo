@@ -43,6 +43,7 @@ export default {
   name: 'app',
   components: {
     Swiper,
+    SwiperItem,
     Search,
     Group,
     Cell,
