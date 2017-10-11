@@ -11,6 +11,7 @@
     @on-cancel="onCancel"
     @on-submit="onSubmit"
     ref="search"></search>
+    <divider></divider>
     <swiper auto height="30px" direction="vertical" :interval=2000 class="text-scroll" :show-dots="false">
       <swiper-item><p>义务爱了 完成传奇世界H5-王者归来任务 获得20金币</p></swiper-item>
       <swiper-item><p>基本世神 兑换《传奇世界H5》畅玩级礼包 消耗30金币</p></swiper-item>
@@ -19,6 +20,7 @@
       <swiper-item><p>只知道不知道 兑换【饿了么】畅享美食红包 消耗20金币</p></swiper-item>
       <swiper-item><p>基本世神 兑换《传奇世界H5》畅玩级礼包 消耗30金币</p></swiper-item>
     </swiper>
+    <divider></divider>
     <router-view></router-view>
     <grid>
       <grid-item link="/component/cell" label="公告">
@@ -50,7 +52,7 @@
   </div>
 </template>
 <script>
-import { Grid, GridItem, GroupTitle, Marquee, MarqueeItem, Swiper, SwiperItem, Search } from 'vux'
+import { Grid, GridItem, GroupTitle, Marquee, MarqueeItem, Swiper, SwiperItem, Search, Divider } from 'vux'
 
 export default {
   data () {
@@ -65,6 +67,7 @@ export default {
     Search,
     Swiper,
     SwiperItem,
+    Divider,
     Marquee,
     MarqueeItem
   },
@@ -83,3 +86,16 @@ export default {
   }
 }
 </script>
+<style scoped>
+.text-scroll {
+  border: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+}
+.text-scroll p{
+  font-size: 12px;
+  text-align: center;
+  line-height: 30px;
+}
+
+</style>
