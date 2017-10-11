@@ -2,6 +2,7 @@
   <div id="app">
     <div>
     <swiper :list="demo03_list" auto style="width:100%;margin:0 auto;" :aspect-ratio="300/800" dots-class="custom-bottom" dots-position="center"></swiper>
+  <router-view></router-view>
   </div>
 </template>
 
