@@ -90,10 +90,14 @@ export default {
   border-left: none;
   border-right: none;
 }
-.text-scroll .align-middle p{
+.text-scroll p{
   font-size: 12px;
   text-align: center;
   line-height: 30px;
 }
 
+.align-middle {
+  font-size: 12px;
+  text-align: center;
+}
 </style>
