@@ -19,6 +19,7 @@
       <swiper-item><p>只知道不知道 兑换【饿了么】畅享美食红包 消耗20金币</p></swiper-item>
       <swiper-item><p>基本世神 兑换《传奇世界H5》畅玩级礼包 消耗30金币</p></swiper-item>
     </swiper>
+    </br>
     <router-view></router-view>
     <grid>
       <grid-item link="/component/cell" label="公告">
