@@ -12,6 +12,7 @@
     @on-submit="onSubmit"
     ref="search"></search>
     <divider></divider>
+    <group-title>垂直方向文字滚动</group-title>
     <swiper auto height="30px" direction="vertical" :interval=2000 class="text-scroll" :show-dots="false">
       <swiper-item><p>义务爱了 完成传奇世界H5-王者归来任务 获得20金币</p></swiper-item>
       <swiper-item><p>基本世神 兑换《传奇世界H5》畅玩级礼包 消耗30金币</p></swiper-item>
@@ -46,9 +47,11 @@
         <span slot="label">关于我们</span>
       </grid-item>
     </grid>
+    <div class="text-scroll">
     <marquee>
-      <marquee-item v-for="i in asyncCount" :key="i" @click.native="onClick(i)" class="align-middle text-scroll">关于《SMT汰旧设备转让（富士康南宁厂区-标4）（二次转让）》实地看样说明 {{i}}</marquee-item>
+      <marquee-item v-for="i in asyncCount" :key="i" @click.native="onClick(i)" class="align-middle">关于《SMT汰旧设备转让（富士康南宁厂区-标4）（二次转让）》实地看样说明 {{i}}</marquee-item>
     </marquee>
+    </div>
   </div>
 </template>
 <script>
