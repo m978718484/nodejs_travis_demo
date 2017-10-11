@@ -47,7 +47,7 @@
       </grid-item>
     </grid>
     <marquee>
-      <marquee-item v-for="i in asyncCount" :key="i" @click.native="onClick(i)" class="align-middle">关于《SMT汰旧设备转让（富士康南宁厂区-标4）（二次转让）》实地看样说明 {{i}}</marquee-item>
+      <marquee-item v-for="i in asyncCount" :key="i" @click.native="onClick(i)" class="align-middle text-scroll">关于《SMT汰旧设备转让（富士康南宁厂区-标4）（二次转让）》实地看样说明 {{i}}</marquee-item>
     </marquee>
   </div>
 </template>
