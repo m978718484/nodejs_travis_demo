@@ -50,7 +50,7 @@
   </div>
 </template>
 <script>
-import { Grid, GridItem, GroupTitle, Marquee, MarqueeItem, Swiper, Search } from 'vux'
+import { Grid, GridItem, GroupTitle, Marquee, MarqueeItem, Swiper, SwiperItem, Search } from 'vux'
 
 export default {
   data () {
@@ -64,6 +64,7 @@ export default {
     GroupTitle,
     Search,
     Swiper,
+    SwiperItem,
     Marquee,
     MarqueeItem
   },
