@@ -46,5 +46,10 @@ export default {
 }
 body {
     display: block;
+    margin: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
 }
 </style>
