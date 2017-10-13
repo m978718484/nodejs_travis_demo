@@ -25,33 +25,20 @@
         <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-40.png"></div></flexbox-item>
       </flexbox>
     </div>
+    <br>
     <div> 
-    <cell style="text-align:left;color:red;font-size: 13px;" title="公告消息" value="更多" is-link></cell>
+    <cell style="text-align:left;color:red;font-size: 13px;" title="公告消息" value="更多公告" is-link></cell>
      <marquee style="text-align:center;" >
         <marquee-item v-for="i in asyncCount" :key="i" @click.native="onClick(i)" class="align-middle">关于《SMT汰旧设备转让（富士康南宁厂区-标4）（二次转让）》实地看样说明 {{i}}</marquee-item>
     </marquee>
     </div>
     <div>
-      <cell style="text-align:left;color:red;font-size: 13px;" title="转让项目" value="更多" is-link></cell>
-      <panel :list="list" :type="type" @on-img-error="onImgError"></panel>
+      <cell style="text-align:left;color:red;font-size: 13px;" title="转让项目" value="更多转让" is-link></cell>
+      <panel :list="list_zr" type="5" @on-img-error="onImgError"></panel>
     </div>
     <div>  
-      <cell style="text-align:left;color:red;font-size: 13px;" title="招标项目" value="更多" is-link></cell>
-      <marquee>
-        <marquee-item v-for="i in asyncCount" :key="i" @click.native="onClick(i)" class="align-middle">关于《SMT汰旧设备转让（富士康南宁厂区-标4）（二次转让）》实地看样说明 {{i}}</marquee-item>
-      </marquee>
-    </div>
-    <div>  
-      <cell style="text-align:left;color:red;font-size: 13px;" title="转让结果" value="更多" is-link></cell>
-      <marquee>
-        <marquee-item v-for="i in asyncCount" :key="i" @click.native="onClick(i)" class="align-middle">关于《SMT汰旧设备转让（富士康南宁厂区-标4）（二次转让）》实地看样说明 {{i}}</marquee-item>
-      </marquee>
-    </div>
-    <div>  
-      <cell style="text-align:left;color:red;font-size: 13px;" title="招标结果" value="更多" is-link></cell>
-      <marquee>
-        <marquee-item v-for="i in asyncCount" :key="i" @click.native="onClick(i)" class="align-middle">关于《SMT汰旧设备转让（富士康南宁厂区-标4）（二次转让）》实地看样说明 {{i}}</marquee-item>
-      </marquee>
+      <cell style="text-align:left;color:red;font-size: 13px;" title="招标项目" value="更多招标" is-link></cell>
+      <panel :list="list_zb" type="5" @on-img-error="onImgError"></panel>
     </div>
     <br>
     <br>
@@ -65,8 +52,7 @@ export default {
   data () {
     return {
       asyncCount: 0,
-      type: '5',
-      list: [{
+      list_zr: [{
         src: 'http://www.srmmx.com/upload/AuctionPicture/2017/9/18/0551c821-45a9-4224-aec8-56793d1bc902.jpg',
         title: '全新ASM原装配件一批转让',
         desc: '保证金缴纳截止时间：2017/10/19',
@@ -74,12 +60,12 @@ export default {
         meta: {
           source: '浙江·杭州',
           date: '6天19时24分57秒 ',
-          other: '<a style="color:red;">我要报名</a>'
+          other: '<a style="color:blue;">更多详情</a>'
         }
       }, {
         src: 'http://www.srmmx.com/upload/AuctionPicture/2017/9/26/ddd34e1b-465f-43be-9b0a-5f8d91c588de.jpg',
         title: '（Universal/环球）自动贴片机、锡膏印刷机、SONY检查机等共21台SMT汰旧设备转让',
-        desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
+        desc: '保证金缴纳截止时间：2017/10/19',
         url: {
           path: '/component/radio',
           replace: false
@@ -87,7 +73,29 @@ export default {
         meta: {
           source: '广东·深圳',
           date: '6天19时57分04秒',
-          other: '<a style="color:red;">我要报名</a>'
+          other: '<a style="color:blue;">更多详情</a>'
+        }
+      }],
+      list_zb: [{
+        title: '上海臨港松江科技城辦公室整改工程',
+        desc: '零星工程',
+        url: '/component/cell',
+        meta: {
+          source: '上海',
+          date: '2017-08-30 10:20',
+          other: '<a style="color:blue;">更多详情</a>'
+        }
+      }, {
+        title: 'A1-2F Gemalto Cell總檢包裝移位電氣工程',
+        desc: '机电工程',
+        url: {
+          path: '/component/radio',
+          replace: false
+        },
+        meta: {
+          source: '南京',
+          date: '2017-08-10 09:20',
+          other: '<a style="color:blue;">更多详情</a>'
         }
       }]
     }
