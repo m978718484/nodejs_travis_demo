@@ -4,6 +4,7 @@
       <loading v-model="isLoading"></loading>
     </div>
     <search :auto-fixed="false"></search>
+    <br>
     <router-view></router-view>
     <tabbar class="vux-demo-tabbar">
       <tabbar-item selected link="/icon">
@@ -27,14 +28,18 @@
 </template>
 
 <script>
-import { Tabbar, TabbarItem, Search } from 'vux'
+import { Tabbar, TabbarItem, Search, Loading, TransferDom } from 'vux'
 import { mapState } from 'vuex'
 export default {
   name: 'app',
+  directives: {
+    TransferDom
+  },
   components: {
     Search,
     Tabbar,
-    TabbarItem
+    TabbarItem,
+    Loading
   },
   computed: {
     ...mapState({

@@ -4,25 +4,25 @@
       <flexbox>
         <flexbox-item>
           <div class="flex-demo">
-            <img slot="icon" src="../assets/Icon-48.png">
+            <img slot="icon" src="../assets/Icon-40.png">
           </div>
         </flexbox-item>
-        <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-48.png"></div></flexbox-item>
-        <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-48.png"></div></flexbox-item>
-        <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-48.png"></div></flexbox-item>
-        <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-48.png"></div></flexbox-item>
+        <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-40.png"></div></flexbox-item>
+        <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-40.png"></div></flexbox-item>
+        <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-40.png"></div></flexbox-item>
+        <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-40.png"></div></flexbox-item>
       </flexbox>
       <br>
       <flexbox>
         <flexbox-item>
           <div class="flex-demo">
-            <img slot="icon" src="../assets/Icon-48.png">
+            <img slot="icon" src="../assets/Icon-40.png">
           </div>
         </flexbox-item>
-        <flexbox-item @click.native="onItemClick"><div class="flex-demo"><img slot="icon" src="../assets/Icon-48.png"></div></flexbox-item>
-        <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-48.png"></div></flexbox-item>
-        <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-48.png"></div></flexbox-item>
-        <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-48.png"></div></flexbox-item>
+        <flexbox-item @click.native="onItemClick"><div class="flex-demo"><img slot="icon" src="../assets/Icon-40.png"></div></flexbox-item>
+        <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-40.png"></div></flexbox-item>
+        <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-40.png"></div></flexbox-item>
+        <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-40.png"></div></flexbox-item>
       </flexbox>
     </div>
     <div> 
