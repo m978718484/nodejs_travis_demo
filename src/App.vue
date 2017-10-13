@@ -3,8 +3,6 @@
     <div v-transfer-dom>
       <loading v-model="isLoading"></loading>
     </div>
-    <search :auto-fixed="false"></search>
-    <br>
     <router-view></router-view>
     <tabbar class="vux-demo-tabbar">
       <tabbar-item selected link="/icon">
@@ -12,12 +10,12 @@
         <span slot="label">首页</span>
       </tabbar-item>
       <tabbar-item selected link="/vux">
-        <img slot="icon" src="./assets/home.png">
+        <img slot="icon" src="./assets/notice-icon.png">
         <span slot="label">公告</span>
       </tabbar-item>
-      <tabbar-item selected link="/component/demo">
+      <tabbar-item selected link="/t">
         <img slot="icon" src="./assets/home.png">
-        <span slot="label">地区</span>
+        <span slot="label">关于我们</span>
       </tabbar-item>
       <tabbar-item selected link="/">
         <img slot="icon" src="./assets/home.png">
@@ -28,7 +26,7 @@
 </template>
 
 <script>
-import { Tabbar, TabbarItem, Search, Loading, TransferDom } from 'vux'
+import { Tabbar, TabbarItem, Loading, TransferDom } from 'vux'
 import { mapState } from 'vuex'
 export default {
   name: 'app',
@@ -36,7 +34,6 @@ export default {
     TransferDom
   },
   components: {
-    Search,
     Tabbar,
     TabbarItem,
     Loading

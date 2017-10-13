@@ -1,13 +1,27 @@
 <template>
   <div>
+    <search :auto-fixed="false"></search>
+    <br>
     <div>
       <flexbox>
         <flexbox-item>
           <div class="flex-demo">
-            <img slot="icon" src="../assets/Icon-40.png">
+            <span class="img-box">
+              <a class="test" href="http://zb.chinabidding.com.cn/zbw/zbxx/fbxx/fbgg/index.jsp">
+                <img src="../assets/notice-icon.png"></a>
+            </span>
+            <a style="font-size:14px;" href="http://zb.chinabidding.com.cn/zbw/zbxx/fbxx/fbgg/index.jsp">公告消息</a>    
           </div>
         </flexbox-item>
-        <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-40.png"></div></flexbox-item>
+        <flexbox-item>
+          <div class="flex-demo">
+            <span class="img-box">
+              <a class="test" href="http://zb.chinabidding.com.cn/zbw/zbxx/fbxx/fbgg/index.jsp">
+                <img src="../assets/zhuanrang-icon.png"></a>
+            </span>
+            <a style="font-size:14px;" href="http://zb.chinabidding.com.cn/zbw/zbxx/fbxx/fbgg/index.jsp">转让项目</a>  
+         </div>
+      </flexbox-item>
         <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-40.png"></div></flexbox-item>
         <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-40.png"></div></flexbox-item>
         <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-40.png"></div></flexbox-item>
@@ -27,17 +41,17 @@
     </div>
     <br>
     <div> 
-    <cell style="text-align:left;color:red;font-size: 13px;" title="公告消息" value="更多公告" is-link></cell>
+    <cell style="text-align:left;color:red;" title="公告消息" value="更多公告" is-link></cell>
      <marquee style="text-align:center;" >
         <marquee-item v-for="i in asyncCount" :key="i" @click.native="onClick(i)" class="align-middle">关于《SMT汰旧设备转让（富士康南宁厂区-标4）（二次转让）》实地看样说明 {{i}}</marquee-item>
     </marquee>
     </div>
     <div>
-      <cell style="text-align:left;color:red;font-size: 13px;" title="转让项目" value="更多转让" is-link></cell>
+      <cell style="text-align:left;color:red;" title="转让项目" value="更多转让" is-link></cell>
       <panel :list="list_zr" type="5" @on-img-error="onImgError"></panel>
     </div>
     <div>  
-      <cell style="text-align:left;color:red;font-size: 13px;" title="招标项目" value="更多招标" is-link></cell>
+      <cell style="text-align:left;color:red;" title="招标项目" value="更多招标" is-link></cell>
       <panel :list="list_zb" type="5" @on-img-error="onImgError"></panel>
     </div>
     <br>
@@ -47,7 +61,7 @@
 </template>
 
 <script>
-import { Flexbox, FlexboxItem, Marquee, MarqueeItem, Divider, Group, Cell, Panel } from 'vux'
+import { Flexbox, FlexboxItem, Marquee, MarqueeItem, Divider, Group, Cell, Search, Panel } from 'vux'
 export default {
   data () {
     return {
@@ -108,7 +122,8 @@ export default {
     Group,
     Cell,
     Panel,
-    Divider
+    Divider,
+    Search
   },
   methods: {
     onItemClick () {
@@ -137,5 +152,21 @@ export default {
 }
 .align-middle {
   font-size: 12px;
+}
+
+.img-box{
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #3399FF;
+    border-radius: 100px;
+    position: relative;
+}
+
+.test {
+    position: absolute;
+    left: 7px;
+    top: 9px;
+    bottom: 10px;
 }
 </style>
