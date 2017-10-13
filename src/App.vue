@@ -1,55 +1,66 @@
 <template>
   <div id="app">
-    <div>
-    <swiper :list="demo03_list" auto style="width:100%;margin:0 auto;" :aspect-ratio="300/800" dots-class="custom-bottom" dots-position="center"></swiper>
-  <router-view></router-view>
-  </div>
+    <div v-transfer-dom>
+      <loading v-model="isLoading"></loading>
+    </div>
+    <search :auto-fixed="false"></search>
+    <router-view></router-view>
+    <tabbar class="vux-demo-tabbar">
+      <tabbar-item selected link="/icon">
+        <img slot="icon" src="./assets/home.png">
+        <span slot="label">首页</span>
+      </tabbar-item>
+      <tabbar-item selected link="/vux">
+        <img slot="icon" src="./assets/home.png">
+        <span slot="label">公告</span>
+      </tabbar-item>
+      <tabbar-item selected link="/component/demo">
+        <img slot="icon" src="./assets/home.png">
+        <span slot="label">地区</span>
+      </tabbar-item>
+      <tabbar-item selected link="/">
+        <img slot="icon" src="./assets/home.png">
+        <span slot="label">我的</span>
+      </tabbar-item>
+    </tabbar>
+ </div>
 </template>
 
 <script>
-import { Swiper, SwiperItem, Group, XButton } from 'vux'
-const imgList = [
-  'http://srmmx.com/images/index/banner.jpg',
-  'http://srmmx.com/images/index/banner-1.jpg',
-  'http://srmmx.com/images/index/banner-3.jpg',
-  'http://srmmx.com/images/index/banner-5.jpg'
-]
-
-const demoList = imgList.map((one, index) => ({
-  url: 'javascript:',
-  img: one
-}))
-
+import { Tabbar, TabbarItem, Search } from 'vux'
+import { mapState } from 'vuex'
 export default {
   name: 'app',
   components: {
-    Swiper,
-    SwiperItem,
-    Group,
-    XButton
+    Search,
+    Tabbar,
+    TabbarItem
   },
-  data () {
-    return {
-      demo03_list: demoList
-    }
+  computed: {
+    ...mapState({
+      route: state => state.route,
+      path: state => state.route.path,
+      deviceready: state => state.app.deviceready,
+      demoTop: state => state.vux.demoScrollTop,
+      isLoading: state => state.vux.isLoading,
+      direction: state => state.vux.direction
+    })
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+
+<style lang="less">
+@import '~vux/src/styles/reset.less';
+@import '~vux/src/styles/1px.less';
+@import '~vux/src/styles/tap.less';
+
 body {
-    display: block;
-    margin: 0px;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
+  background-color: #fbf9fe;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 </style>

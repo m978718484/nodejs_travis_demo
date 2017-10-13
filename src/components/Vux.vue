@@ -1,16 +1,5 @@
 <template>
   <div>
-    <search
-    @result-click="resultClick"
-    @on-change="getResult"
-    :results="results"
-    v-model="value"
-    position="absolute"
-    auto-scroll-to-top top="20px"
-    @on-focus="onFocus"
-    @on-cancel="onCancel"
-    @on-submit="onSubmit"
-    ref="search"></search>
     <swiper auto height="30px" direction="vertical" :interval=2000 class="text-scroll" :show-dots="false">
       <swiper-item><p>义务爱了 完成传奇世界H5-王者归来任务 获得20金币</p></swiper-item>
       <swiper-item><p>基本世神 兑换《传奇世界H5》畅玩级礼包 消耗30金币</p></swiper-item>
@@ -21,13 +10,12 @@
     </swiper>
     <br>
     <br>
-    <router-view></router-view>
     <grid>
       <grid-item link="/component/cell" label="公告">
-        <img slot="icon" src="../assets/home.png">
+        <img slot="icon" src="../assets/notice.png">
       </grid-item>
       <grid-item :link="{ path: '/component/cell'}" label="转让项目">
-        <img slot="icon" src="../assets/home.png">
+        <img slot="icon" src="../assets/Icon-512.png">
       </grid-item>
       <grid-item link="/component/cell" @on-item-click="onItemClick">
         <img slot="icon" src="../assets/home.png">
@@ -36,7 +24,7 @@
     </grid>
     <grid>
       <grid-item link="/component/cell" label="招标项目">
-        <img slot="icon" src="../assets/home.png">
+        <img slot="icon" src="../assets/bid.jpg">
       </grid-item>
       <grid-item :link="{ path: '/component/cell'}" label="中标结果">
         <img slot="icon" src="../assets/home.png">

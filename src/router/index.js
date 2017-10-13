@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import Vux from '@/components/Vux'
+import Icon from '@/components/Icon'
+import T from '@/components/T'
 
 Vue.use(Router)
 
@@ -16,6 +18,16 @@ export default new Router({
       path: '/vux',
       name: 'Vux',
       component: Vux
+    },
+    {
+      path: '/icon',
+      name: 'Icon',
+      component: Icon
+    },
+    {
+      path: '/t',
+      name: 'T',
+      component: T
     }
   ]
 })
