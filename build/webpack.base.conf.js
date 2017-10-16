@@ -76,5 +76,8 @@ const webpackConfig = {
   }
 } // 原来的 module.exports 代码赋值给变量 webpackConfig
 module.exports = vuxLoader.merge(webpackConfig, {
-  plugins: ['vux-ui']
+  plugins: ['vux-ui'],
+  options: { 
+    showVuxVersionInfo: false 
+  }
 })

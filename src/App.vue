@@ -9,15 +9,15 @@
         <img slot="icon" src="./assets/home.png">
         <span slot="label">首页</span>
       </tabbar-item>
-      <tabbar-item selected link="/vux">
+      <tabbar-item link="/vux">
         <img slot="icon" src="./assets/notice-icon.png">
         <span slot="label">公告</span>
       </tabbar-item>
-      <tabbar-item selected link="/t">
+      <tabbar-item link="/t">
         <img slot="icon" src="./assets/home.png">
         <span slot="label">关于我们</span>
       </tabbar-item>
-      <tabbar-item selected link="/">
+      <tabbar-item link="/">
         <img slot="icon" src="./assets/home.png">
         <span slot="label">我的</span>
       </tabbar-item>

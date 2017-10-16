@@ -22,7 +22,7 @@
             <a style="font-size:14px;" href="http://zb.chinabidding.com.cn/zbw/zbxx/fbxx/fbgg/index.jsp">转让项目</a>  
          </div>
       </flexbox-item>
-        <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-40.png"></div></flexbox-item>
+        <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/target.png"></div></flexbox-item>
         <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-40.png"></div></flexbox-item>
         <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-40.png"></div></flexbox-item>
       </flexbox>
@@ -74,7 +74,7 @@ export default {
         meta: {
           source: '浙江·杭州',
           date: '6天19时24分57秒 ',
-          other: '<a style="color:blue;">更多详情</a>'
+          other: '<a style="color:blue;">更多信息</a>'
         }
       }, {
         src: 'http://www.srmmx.com/upload/AuctionPicture/2017/9/26/ddd34e1b-465f-43be-9b0a-5f8d91c588de.jpg',
@@ -87,7 +87,7 @@ export default {
         meta: {
           source: '广东·深圳',
           date: '6天19时57分04秒',
-          other: '<a style="color:blue;">更多详情</a>'
+          other: '<a style="color:blue;">更多信息</a>'
         }
       }],
       list_zb: [{
@@ -97,7 +97,7 @@ export default {
         meta: {
           source: '上海',
           date: '2017-08-30 10:20',
-          other: '<a style="color:blue;">更多详情</a>'
+          other: '<a style="color:blue;">更多信息</a>'
         }
       }, {
         title: 'A1-2F Gemalto Cell總檢包裝移位電氣工程',
@@ -109,7 +109,7 @@ export default {
         meta: {
           source: '南京',
           date: '2017-08-10 09:20',
-          other: '<a style="color:blue;">更多详情</a>'
+          other: '<a style="color:blue;">更多信息</a>'
         }
       }]
     }
@@ -152,6 +152,9 @@ export default {
 }
 .align-middle {
   font-size: 12px;
+  text-align: left;
+  overflow: hidden; /*自动隐藏文字*/
+  text-overflow: ellipsis;/*文字隐藏后添加省略号*/
 }
 
 .img-box{
