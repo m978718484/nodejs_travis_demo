@@ -8,7 +8,7 @@
           <div class="flex-demo">
             <span>
               <img slot="icon" src="../assets/menu-40.png">
-            </span>
+            </span><br>
             <a style="font-size:14px;" href="#">系统公告</a>    
           </div>
         </flexbox-item>
@@ -16,38 +16,77 @@
           <div class="flex-demo">
             <span>
               <img slot="icon" src="../assets/renewable-energy-40.png">
-            </span>
+            </span><br>
             <a style="font-size:14px;" href="#">转让</a>  
          </div>
       </flexbox-item>
-        <flexbox-item><div class="flex-demo">            <span>
+        <flexbox-item>
+          <div class="flex-demo">            
+            <span>
               <img slot="icon" src="../assets/aim-40.png">
-            </span>
+            </span><br>
             <a style="font-size:14px;" href="#">转让结果</a> 
-            </div> 
+          </div> 
         </flexbox-item>
-        <flexbox-item><div class="flex-demo">            <span>
+        <flexbox-item>
+          <div class="flex-demo">            
+            <span>
               <img slot="icon" src="../assets/transaction-40.png">
-            </span>
+            </span><br>
             <a style="font-size:14px;" href="#">招标</a> 
-            </div> </flexbox-item>
-        <flexbox-item><div class="flex-demo">            <span>
+          </div> 
+        </flexbox-item>
+        <flexbox-item>
+          <div class="flex-demo">            
+            <span>
               <img slot="icon" src="../assets/target-40.png">
-            </span>
+            </span><br>
             <a style="font-size:14px;" href="#">中标公示</a> 
-            </div> </flexbox-item>
+          </div> 
+        </flexbox-item>
       </flexbox>
       <br>
       <flexbox>
         <flexbox-item>
           <div class="flex-demo">
-            <img slot="icon" src="../assets/Icon-40.png">
+            <span>
+              <img slot="icon" src="../assets/Icon-40.png">
+            </span><br>
+            <a style="font-size:14px;" href="#">服务宗旨</a> 
           </div>
         </flexbox-item>
-        <flexbox-item @click.native="onItemClick"><div class="flex-demo"><img slot="icon" src="../assets/Icon-40.png"></div></flexbox-item>
-        <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-40.png"></div></flexbox-item>
-        <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-40.png"></div></flexbox-item>
-        <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-40.png"></div></flexbox-item>
+        <flexbox-item @click.native="onItemClick">
+          <div class="flex-demo">
+            <span>
+              <img slot="icon" src="../assets/Icon-40.png">
+            </span><br>
+            <a style="font-size:14px;" href="#">业务规则</a> 
+          </div>
+        </flexbox-item>
+        <flexbox-item>
+          <div class="flex-demo">
+            <span>
+              <img slot="icon" src="../assets/Icon-40.png">
+            </span><br>
+            <a style="font-size:14px;" href="#">政策法规</a> 
+          </div>
+        </flexbox-item>
+        <flexbox-item>
+          <div class="flex-demo">
+            <span>
+              <img slot="icon" src="../assets/Icon-40.png">
+            </span><br>
+            <a style="font-size:14px;" href="#">操作指南</a> 
+          </div>
+        </flexbox-item>
+        <flexbox-item>
+          <div class="flex-demo">
+            <span>
+              <img slot="icon" src="../assets/Icon-40.png">
+            </span><br>
+            <a style="font-size:14px;" href="#">...</a> 
+          </div>
+        </flexbox-item>
       </flexbox>
     </div>
     <br>

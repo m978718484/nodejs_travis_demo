@@ -10,7 +10,7 @@
         <span slot="label">首页</span>
       </tabbar-item>
       <tabbar-item link="/vux">
-        <img slot="icon" src="./assets/notice-icon.png">
+        <img slot="icon" src="./assets/menu-40.png">
         <span slot="label">公告</span>
       </tabbar-item>
       <tabbar-item link="/t">
