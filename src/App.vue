@@ -14,12 +14,12 @@
         <span slot="label">公告</span>
       </tabbar-item>
       <tabbar-item link="/t">
-        <img slot="icon" src="./assets/home.png">
+        <img slot="icon" src="./assets/operator.png">
         <span slot="label">关于我们</span>
       </tabbar-item>
       <tabbar-item link="/">
-        <img slot="icon" src="./assets/home.png">
-        <span slot="label">我的</span>
+        <img slot="icon" src="./assets/attachment.png">
+        <span slot="label">我</span>
       </tabbar-item>
     </tabbar>
  </div>

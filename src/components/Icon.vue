@@ -6,25 +6,36 @@
       <flexbox>
         <flexbox-item>
           <div class="flex-demo">
-            <span class="img-box">
-              <a class="test" href="http://zb.chinabidding.com.cn/zbw/zbxx/fbxx/fbgg/index.jsp">
-                <img src="../assets/notice-icon.png"></a>
+            <span>
+              <img slot="icon" src="../assets/menu-40.png">
             </span>
-            <a style="font-size:14px;" href="http://zb.chinabidding.com.cn/zbw/zbxx/fbxx/fbgg/index.jsp">公告消息</a>    
+            <a style="font-size:14px;" href="#">系统公告</a>    
           </div>
         </flexbox-item>
         <flexbox-item>
           <div class="flex-demo">
-            <span class="img-box">
-              <a class="test" href="http://zb.chinabidding.com.cn/zbw/zbxx/fbxx/fbgg/index.jsp">
-                <img src="../assets/zhuanrang-icon.png"></a>
+            <span>
+              <img slot="icon" src="../assets/renewable-energy-40.png">
             </span>
-            <a style="font-size:14px;" href="http://zb.chinabidding.com.cn/zbw/zbxx/fbxx/fbgg/index.jsp">转让项目</a>  
+            <a style="font-size:14px;" href="#">转让</a>  
          </div>
       </flexbox-item>
-        <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/target.png"></div></flexbox-item>
-        <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-40.png"></div></flexbox-item>
-        <flexbox-item><div class="flex-demo"><img slot="icon" src="../assets/Icon-40.png"></div></flexbox-item>
+        <flexbox-item><div class="flex-demo">            <span>
+              <img slot="icon" src="../assets/aim-40.png">
+            </span>
+            <a style="font-size:14px;" href="#">转让结果</a> 
+            </div> 
+        </flexbox-item>
+        <flexbox-item><div class="flex-demo">            <span>
+              <img slot="icon" src="../assets/transaction-40.png">
+            </span>
+            <a style="font-size:14px;" href="#">招标</a> 
+            </div> </flexbox-item>
+        <flexbox-item><div class="flex-demo">            <span>
+              <img slot="icon" src="../assets/target-40.png">
+            </span>
+            <a style="font-size:14px;" href="#">中标公示</a> 
+            </div> </flexbox-item>
       </flexbox>
       <br>
       <flexbox>
@@ -145,6 +156,7 @@ export default {
 </script>
 <style scoped>
 .flex-demo {
+
   text-align: center;
   color: #fff;
   border-radius: 4px;
