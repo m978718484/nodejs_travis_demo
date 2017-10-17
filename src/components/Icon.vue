@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <search :auto-fixed="false"></search>
     <br>
     <div>
@@ -86,19 +86,56 @@
         </flexbox-item>
       </flexbox>
     </div>
-    <br>
+    <divider></divider>
     <div> 
-    <cell style="text-align:left;color:red;" title="公告消息" value="更多公告" is-link></cell>
-     <marquee style="text-align:center;" >
-        <marquee-item v-for="i in asyncCount" :key="i" @click.native="onClick(i)" class="align-middle">关于《SMT汰旧设备转让（富士康南宁厂区-标4）（二次转让）》实地看样说明 {{i}}</marquee-item>
-    </marquee>
+      <marquee >
+        <marquee-item v-for="i in asyncCount" :key="i" @click.native="onClick(i)" class="align-middle">公告：《全新ASM原装配件一批转让》项目延期转让公告转让公告 {{i}}
+        </marquee-item>
+      </marquee>
+    </div>
+    <divider></divider>
+    <flexbox style="font-size:14px;">
+        <flexbox-item>转让项目
+        </flexbox-item>
+        <flexbox-item style="text-align:right;"><a href="#">更多>></a>
+      </flexbox-item>
+    </flexbox>
+    <div class="item-list">
+     <flexbox>
+        <flexbox-item>
+          <div class="customer-txt-image">
+              <img src="http://www.srmmx.com/upload/AuctionPicture/2017/9/18/0551c821-45a9-4224-aec8-56793d1bc902.jpg">
+          </div>
+          <div class="align-middle">全新ASM原装配件一批转让</div> 
+        </flexbox-item>
+        <flexbox-item @click.native="onItemClick">
+          <div class="customer-txt-image">
+              <img src="http://www.srmmx.com/upload/AuctionPicture/2017/9/26/ddd34e1b-465f-43be-9b0a-5f8d91c588de.jpg">
+          </div>
+          <div class="align-middle">（Universal/环球）自动贴片机、锡膏印刷机、SONY检查机等共21台SMT汰旧设备转让</div>
+        </flexbox-item>
+    </flexbox>
+     <flexbox>
+        <flexbox-item>
+          <div class="customer-txt-image">
+              <img src="http://www.srmmx.com/upload/AuctionPicture/2017/9/12/8d8ac6cc-8a2e-4526-95d2-8c3312f3830e.jpg">
+          </div>
+          <div class="align-middle">豪晶干式激光蚀刻机转让</div> 
+        </flexbox-item>
+        <flexbox-item @click.native="onItemClick">
+          <div class="customer-txt-image">
+              <img src="http://www.srmmx.com/upload/AuctionPicture/2017/9/18/e578035f-df0b-406c-92f8-4ccde75c3f4f.jpg">
+          </div>
+          <div class="align-middle">景好有限公司电子余料转让---F007</div>
+        </flexbox-item>
+    </flexbox>
     </div>
     <div>
-      <cell style="text-align:left;color:red;" title="转让项目" value="更多转让" is-link></cell>
+     <!--  <cell title="转让项目" value="更多转让" is-link></cell> -->
       <panel :list="list_zr" type="5" @on-img-error="onImgError"></panel>
     </div>
     <div>  
-      <cell style="text-align:left;color:red;" title="招标项目" value="更多招标" is-link></cell>
+      <cell title="招标项目" value="更多招标" is-link></cell>
       <panel :list="list_zb" type="5" @on-img-error="onImgError"></panel>
     </div>
     <br>
@@ -191,17 +228,35 @@ export default {
 }
 </script>
 <style scoped>
+.customer-txt-image{
+  margin-left: 5px;
+  margin-top: 10px;
+  margin-right: 5px;
+  width:146px;
+  height:110px;
+  border:1px solid black;
+}
+.customer-txt-image img{
+  width:100%;height:100%;
+}
 .flex-demo {
   text-align: center;
   color: #fff;
   border-radius: 4px;
   background-clip: padding-box;
 }
+.flex-demo a {
+  color:black;
+}
+
 .align-middle {
+  color:blue;
   font-size: 12px;
-  text-align: left;
   overflow: hidden; /*自动隐藏文字*/
   text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+  white-space:nowrap;
+  height: 18px;
+  margin-left: 5px;
 }
 
 .img-box{
