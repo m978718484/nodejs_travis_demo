@@ -12,10 +12,10 @@
     <br>
     <grid>
       <grid-item link="/component/cell" label="公告">
-        <img slot="icon" src="../assets/notice.png">
+        <img slot="icon" src="../assets/home.png">
       </grid-item>
       <grid-item :link="{ path: '/component/cell'}" label="转让项目">
-        <img slot="icon" src="../assets/Icon-512.png">
+        <img slot="icon" src="../assets/home.png">
       </grid-item>
       <grid-item link="/component/cell" @on-item-click="onItemClick">
         <img slot="icon" src="../assets/home.png">
@@ -24,7 +24,7 @@
     </grid>
     <grid>
       <grid-item link="/component/cell" label="招标项目">
-        <img slot="icon" src="../assets/bid.jpg">
+        <img slot="icon" src="../assets/home.png">
       </grid-item>
       <grid-item :link="{ path: '/component/cell'}" label="中标结果">
         <img slot="icon" src="../assets/home.png">

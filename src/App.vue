@@ -6,19 +6,19 @@
     <router-view></router-view>
     <tabbar class="vux-demo-tabbar">
       <tabbar-item selected link="/icon">
-        <img slot="icon" src="./assets/home.png">
+        <img slot="icon" src="./assets/house.svg">
         <span slot="label">首页</span>
       </tabbar-item>
       <tabbar-item link="/vux">
-        <img slot="icon" src="./assets/menu-40.png">
+        <img slot="icon" src="./assets/menu.svg">
         <span slot="label">公告</span>
       </tabbar-item>
       <tabbar-item link="/t">
-        <img slot="icon" src="./assets/operator.png">
+        <img slot="icon" src="./assets/home.png">
         <span slot="label">关于我们</span>
       </tabbar-item>
       <tabbar-item link="/">
-        <img slot="icon" src="./assets/attachment.png">
+        <img slot="icon" src="./assets/account.svg">
         <span slot="label">我</span>
       </tabbar-item>
     </tabbar>
