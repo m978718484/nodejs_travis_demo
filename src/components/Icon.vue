@@ -31,7 +31,7 @@
         <flexbox-item>
           <div class="flex-demo">            
             <span>
-              <img slot="icon" src="../assets/transaction-40.png">
+              <div class="img-box"><img slot="icon" src="../assets/transaction.svg"></div>
             </span><br>
             <a style="font-size:14px;" href="#">招标</a> 
           </div> 
@@ -195,7 +195,6 @@ export default {
 </script>
 <style scoped>
 .flex-demo {
-
   text-align: center;
   color: #fff;
   border-radius: 4px;
@@ -210,9 +209,8 @@ export default {
 
 .img-box{
     display: inline-block;
-    width: 42px;
-    height: 42px;
-    border: 1px solid #3399FF;
+    width: 40px;
+    height: 40px;
     border-radius: 100px;
     position: relative;
 }
