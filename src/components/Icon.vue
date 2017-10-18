@@ -1,15 +1,20 @@
 <template>
   <div class="container">
-    <search :auto-fixed="false"></search>
+    <x-header @on-click-title="onItemClick" style="background-color:#FF3B3B;">
+      <span>
+        <i class="weui-icon-search" style="font-size:20px;"></i><span>搜索</span>
+      </span>
+      <x-icon slot="overwrite-left" type="navicon" size="35" style="fill:#fff;position:relative;top:-8px;left:-3px;"></x-icon>
+    </x-header>
     <br>
-    <div>
+    <div class="menu-main">
       <flexbox>
         <flexbox-item>
           <div class="flex-demo">
             <span>
                <div class="img-box"><img slot="icon" src="../assets/menu.svg"></div>
             </span><br>
-            <a style="font-size:14px;" href="#">系统公告</a>    
+            <a href="#">系统公告</a>    
           </div>
         </flexbox-item>
         <flexbox-item>
@@ -17,7 +22,7 @@
             <span>
               <div class="img-box"><img slot="icon" src="../assets/globe.svg"></div>
             </span><br>
-            <a style="font-size:14px;" href="#">转让</a>  
+            <a href="#">转让</a>  
          </div>
       </flexbox-item>
         <flexbox-item>
@@ -25,7 +30,7 @@
             <span>
              <div class="img-box"><img slot="icon" src="../assets/aim.svg"></div>
             </span><br>
-            <a style="font-size:14px;" href="#">转让结果</a> 
+            <a href="#">转让结果</a> 
           </div> 
         </flexbox-item>
         <flexbox-item>
@@ -33,7 +38,7 @@
             <span>
               <div class="img-box"><img slot="icon" src="../assets/transaction.svg"></div>
             </span><br>
-            <a style="font-size:14px;" href="#">招标</a> 
+            <a href="#">招标</a> 
           </div> 
         </flexbox-item>
         <flexbox-item>
@@ -41,7 +46,7 @@
             <span>
               <div class="img-box"><img slot="icon" src="../assets/target.svg"></div>
             </span><br>
-            <a style="font-size:14px;" href="#">中标公示</a> 
+            <a href="#">中标公示</a> 
           </div> 
         </flexbox-item>
       </flexbox>
@@ -52,7 +57,7 @@
             <span>
                <div class="img-box"><img slot="icon" src="../assets/customer-service.svg"></div>
             </span><br>
-            <a style="font-size:14px;" href="#">服务宗旨</a> 
+            <a href="#">服务宗旨</a> 
           </div>
         </flexbox-item>
         <flexbox-item @click.native="onItemClick">
@@ -60,7 +65,7 @@
             <span>
               <div class="img-box"><img slot="icon" src="../assets/pen.svg"></div>
             </span><br>
-            <a style="font-size:14px;" href="#">业务规则</a> 
+            <a href="#">业务规则</a> 
           </div>
         </flexbox-item>
         <flexbox-item>
@@ -68,7 +73,7 @@
             <span>
               <div class="img-box"><img slot="icon" src="../assets/balance.svg"></div>
             </span><br>
-            <a style="font-size:14px;" href="#">政策法规</a> 
+            <a href="#">政策法规</a> 
           </div>
         </flexbox-item>
         <flexbox-item>
@@ -76,129 +81,97 @@
             <span>
               <div class="img-box"><img slot="icon" src="../assets/lighthouse.svg"></div>
             </span><br>
-            <a style="font-size:14px;" href="#">操作指南</a> 
+            <a href="#">操作指南</a> 
           </div>
         </flexbox-item>
         <flexbox-item>
           <div class="flex-demo">
-
           </div>
         </flexbox-item>
       </flexbox>
     </div>
     <divider></divider>
-    <div> 
+    <div class="marquee-notice"> 
       <marquee >
-        <marquee-item v-for="i in asyncCount" :key="i" @click.native="onClick(i)" class="align-middle">公告：《全新ASM原装配件一批转让》项目延期转让公告转让公告 {{i}}
+        <marquee-item v-for="i in asyncCount" :key="i.id" @click.native="onClick(i.id)" class="item-title">公告： {{i.title}}
         </marquee-item>
       </marquee>
     </div>
     <divider></divider>
-    <flexbox style="font-size:14px;">
-        <flexbox-item>转让项目
+    <flexbox style="font-size:14px;margin-left: 5px;">
+      <flexbox-item>转让项目
         </flexbox-item>
-        <flexbox-item style="text-align:right;"><a href="#">更多>></a>
+        <flexbox-item style="text-align:right;margin-right: 5px;"><a href="#">更多>></a>
       </flexbox-item>
     </flexbox>
     <div class="item-list">
-     <flexbox>
+      <flexbox>
         <flexbox-item>
-          <div class="customer-txt-image">
-              <img src="http://www.srmmx.com/upload/AuctionPicture/2017/9/18/0551c821-45a9-4224-aec8-56793d1bc902.jpg">
+          <card>
+          <img slot="header" src="http://www.srmmx.com/upload/AuctionPicture/2017/9/18/0551c821-45a9-4224-aec8-56793d1bc902.jpg" class="card-img">
+          <div slot="content" class="card-padding">
+            <p class="item-title">（Universal/环球）自动贴片机、锡膏印刷机、SONY检查机等共21台SMT汰旧设备转让</p>
+            <div class="item-extra">
+              <p>10-19 17:30 保证金截止</p>
+              <p>浙江·杭州 | 报名中</p>
+              <p>起始价:1,350,000.00RMB</p>
+            </div>
           </div>
-          <div class="align-middle">全新ASM原装配件一批转让</div> 
+        </card>
         </flexbox-item>
         <flexbox-item @click.native="onItemClick">
-          <div class="customer-txt-image">
-              <img src="http://www.srmmx.com/upload/AuctionPicture/2017/9/26/ddd34e1b-465f-43be-9b0a-5f8d91c588de.jpg">
+          <card>
+          <img slot="header" src="http://www.srmmx.com/upload/AuctionPicture/2017/9/26/ddd34e1b-465f-43be-9b0a-5f8d91c588de.jpg" class="card-img">
+          <div slot="content" class="card-padding">
+            <p class="item-title">转角机、接驳台一批转让</p>
+             <div class="item-extra">
+            <p>10-20 17:30 保证金截止</p>
+            <p>广东·深圳 | 准备中</p>
+            <p>起始价:15,000.00USD</p>
           </div>
-          <div class="align-middle">（Universal/环球）自动贴片机、锡膏印刷机、SONY检查机等共21台SMT汰旧设备转让</div>
+          </div>
+        </card>
         </flexbox-item>
-    </flexbox>
-     <flexbox>
+      </flexbox>
+      <flexbox>
         <flexbox-item>
-          <div class="customer-txt-image">
-              <img src="http://www.srmmx.com/upload/AuctionPicture/2017/9/12/8d8ac6cc-8a2e-4526-95d2-8c3312f3830e.jpg">
+          <card>
+          <img slot="header" src="http://www.srmmx.com/upload/AuctionPicture/2017/8/24/9983e3bc-8706-4763-8e92-ad3fdb7d8622.jpg" class="card-img">
+          <div slot="content" class="card-padding">
+            <p class="item-title">SMT汰旧设备转让（富士康南宁厂区-标4）（二次转让）</p>        
+            <div class="item-extra">
+              <p>10-19 17:30 保证金截止</p>
+              <p>北京 | 已结束</p>
+              <p>起始价:350,000.00RMB</p>
+            </div>
           </div>
-          <div class="align-middle">豪晶干式激光蚀刻机转让</div> 
+        </card>
         </flexbox-item>
         <flexbox-item @click.native="onItemClick">
-          <div class="customer-txt-image">
-              <img src="http://www.srmmx.com/upload/AuctionPicture/2017/9/18/e578035f-df0b-406c-92f8-4ccde75c3f4f.jpg">
+        <card>
+          <img class="card-img" slot="header" src="http://www.srmmx.com/upload/AuctionPicture/2017/9/12/8d8ac6cc-8a2e-4526-95d2-8c3312f3830e.jpg">
+          <div slot="content" class="card-padding">
+            <p class="item-title">豪晶干式激光蚀刻机转让</p>
+            <div class="item-extra">
+              <p>10-19 17:30 保证金截止</p>
+              <p>广西·南宁 | 已结束</p>
+              <p>起始价:15,000.00USD</p>
+            </div>
           </div>
-          <div class="align-middle">景好有限公司电子余料转让---F007</div>
+        </card>
         </flexbox-item>
-    </flexbox>
+      </flexbox>
     </div>
-    <div>
-     <!--  <cell title="转让项目" value="更多转让" is-link></cell> -->
-      <panel :list="list_zr" type="5" @on-img-error="onImgError"></panel>
-    </div>
-    <div>  
-      <cell title="招标项目" value="更多招标" is-link></cell>
-      <panel :list="list_zb" type="5" @on-img-error="onImgError"></panel>
-    </div>
-    <br>
-    <br>
-    <br>
   </div>
 </template>
 
 <script>
-import { Flexbox, FlexboxItem, Marquee, MarqueeItem, Divider, Group, Cell, Search, Panel } from 'vux'
+import { Flexbox, FlexboxItem, Marquee, MarqueeItem, Divider, Group, Cell, Search, Panel, XHeader, Actionsheet, TransferDom, Card } from 'vux'
 export default {
-  data () {
-    return {
-      asyncCount: 0,
-      list_zr: [{
-        src: 'http://www.srmmx.com/upload/AuctionPicture/2017/9/18/0551c821-45a9-4224-aec8-56793d1bc902.jpg',
-        title: '全新ASM原装配件一批转让',
-        desc: '保证金缴纳截止时间：2017/10/19',
-        url: '/component/cell',
-        meta: {
-          source: '浙江·杭州',
-          date: '6天19时24分57秒 ',
-          other: '<a style="color:blue;">更多信息</a>'
-        }
-      }, {
-        src: 'http://www.srmmx.com/upload/AuctionPicture/2017/9/26/ddd34e1b-465f-43be-9b0a-5f8d91c588de.jpg',
-        title: '（Universal/环球）自动贴片机、锡膏印刷机、SONY检查机等共21台SMT汰旧设备转让',
-        desc: '保证金缴纳截止时间：2017/10/19',
-        url: {
-          path: '/component/radio',
-          replace: false
-        },
-        meta: {
-          source: '广东·深圳',
-          date: '6天19时57分04秒',
-          other: '<a style="color:blue;">更多信息</a>'
-        }
-      }],
-      list_zb: [{
-        title: '上海臨港松江科技城辦公室整改工程',
-        desc: '零星工程',
-        url: '/component/cell',
-        meta: {
-          source: '上海',
-          date: '2017-08-30 10:20',
-          other: '<a style="color:blue;">更多信息</a>'
-        }
-      }, {
-        title: 'A1-2F Gemalto Cell總檢包裝移位電氣工程',
-        desc: '机电工程',
-        url: {
-          path: '/component/radio',
-          replace: false
-        },
-        meta: {
-          source: '南京',
-          date: '2017-08-10 09:20',
-          other: '<a style="color:blue;">更多信息</a>'
-        }
-      }]
-    }
-  },
   components: {
+    XHeader,
+    Actionsheet,
+    TransferDom,
     Flexbox,
     FlexboxItem,
     Marquee,
@@ -207,7 +180,16 @@ export default {
     Cell,
     Panel,
     Divider,
-    Search
+    Search,
+    Card
+  },
+  data () {
+    return {
+      asyncCount: []
+    }
+  },
+  directives: {
+    TransferDom
   },
   methods: {
     onItemClick () {
@@ -222,22 +204,16 @@ export default {
   },
   mounted () {
     setTimeout(() => {
-      this.asyncCount = 5
+      this.asyncCount = [{ id: 1, title: 'xxx' }, { id: 2, title: 'yyyy' }, { id: 3, title: 'zzzz' }]
     }, 1000)
   }
 }
 </script>
 <style scoped>
-.customer-txt-image{
-  margin-left: 5px;
-  margin-top: 10px;
-  margin-right: 5px;
-  width:146px;
+.card-img{
+  width:100%;
   height:110px;
-  border:1px solid black;
-}
-.customer-txt-image img{
-  width:100%;height:100%;
+  display:block;
 }
 .flex-demo {
   text-align: center;
@@ -247,30 +223,26 @@ export default {
 }
 .flex-demo a {
   color:black;
+  font-size:14px;
 }
-
-.align-middle {
-  color:blue;
-  font-size: 12px;
+.item-extra {
+  color:#999;
+  font-size:12px;
+}
+.item-title {
+  font-size: 14px;
   overflow: hidden; /*自动隐藏文字*/
   text-overflow: ellipsis;/*文字隐藏后添加省略号*/
   white-space:nowrap;
   height: 18px;
-  margin-left: 5px;
+  line-height:1.2;
 }
 
-.img-box{
+.img-box {
     display: inline-block;
     width: 40px;
     height: 40px;
     border-radius: 100px;
     position: relative;
-}
-
-.test {
-    position: absolute;
-    left: 7px;
-    top: 9px;
-    bottom: 10px;
 }
 </style>

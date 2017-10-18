@@ -4,6 +4,9 @@
       <loading v-model="isLoading"></loading>
     </div>
     <router-view></router-view>
+    <br>
+    <br>
+    <br>
     <tabbar class="vux-demo-tabbar">
       <tabbar-item selected link="/icon">
         <img slot="icon" src="./assets/house.svg">

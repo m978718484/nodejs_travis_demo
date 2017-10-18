@@ -1,129 +1,81 @@
 <template>
   <div>
-    <group>
-      <cell is-link title="Simple" link="/component/tabbar-simple"></cell>
-      <cell is-link title="Switch icons" link="/component/tabbar-icon"></cell>
-    </group>
+    <div style="margin: 10px;overflow: hidden;" v-for="item in list">
+      <masker style="border-radius: 2px;">
+        <div class="m-img" :style="{backgroundImage: 'url(' + item.img + ')'}"></div>
+        <div slot="content" class="m-title">
+          {{item.title}}
+          <br/>
+          <span class="m-time">2016-03-18</span>
+        </div>
+      </masker>
+    </div>
+    <div style="margin: 10px;overflow: hidden;">
+      <masker style="border-radius: 2px;" :opacity="0.8">
+        <div class="m-img" style="background-image:url(http://www.srmmx.com/upload/AuctionPicture/2017/9/12/8d8ac6cc-8a2e-4526-95d2-8c3312f3830e.jpg)"></div>
+        <div slot="content" class="m-title">
+          VUX
+          <br/>
+          <span class="m-time">2016-03-18</span>
+        </div>
+      </masker>
+    </div>
   </div>
 </template>
 
 <script>
-import { Group, Cell } from 'vux'
+import { Masker } from 'vux'
 export default {
   components: {
-    Group,
-    Cell
+    Masker
+  },
+  data () {
+    return {
+      list: [{
+        title: '（Universal/环球）自动贴片机、锡膏印刷机、SONY检查机等共21台SMT汰旧设备转让',
+        img: 'http://www.srmmx.com/upload/AuctionPicture/2017/9/18/0551c821-45a9-4224-aec8-56793d1bc902.jpg'
+      }, {
+        title: '美容用品 & 日用品（上）',
+        img: 'http://www.srmmx.com/upload/AuctionPicture/2017/9/26/ddd34e1b-465f-43be-9b0a-5f8d91c588de.jpg'
+      }, {
+        title: '远离车内毒气，日本车载空气净化器精选',
+        img: 'http://www.srmmx.com/upload/AuctionPicture/2017/9/18/e578035f-df0b-406c-92f8-4ccde75c3f4f.jpg'
+      }]
+    }
   }
 }
 </script>
 
 <style lang="less">
-@import '~vux/src/styles/reset.less';
-@import '~vux/src/styles/1px.less';
-@import '~vux/src/styles/tap.less';
-
-body {
-  background-color: #fbf9fe;
+.m-img {
+  padding-bottom: 33%;
+  display: block;
+  position: relative;
+  max-width: 100%;
+  background-size: cover;
+  background-position: center center;
+  cursor: pointer;
+  border-radius: 2px;
 }
-html, body {
-  height: 100%;
-  width: 100%;
-  overflow-x: hidden;
-}
-
-.demo-icon-22 {
-  font-family: 'vux-demo';
-  font-size: 22px;
-  color: #888;
-}
-.weui-tabbar.vux-demo-tabbar {
-  /** backdrop-filter: blur(10px);
-  background-color: none;
-  background: rgba(247, 247, 250, 0.5);**/
-}
-.vux-demo-tabbar .weui-bar__item_on .demo-icon-22 {
-  color: #F70968;
-}
-.vux-demo-tabbar .weui-tabbar_item.weui-bar__item_on .vux-demo-tabbar-icon-home {
-  color: rgb(53, 73, 94);
-}
-.demo-icon-22:before {
-  content: attr(icon);
-}
-.vux-demo-tabbar-component {
-  background-color: #F70968;
+.m-title {
   color: #fff;
-  border-radius: 7px;
-  padding: 0 4px;
-  line-height: 14px;
-}
-.weui-tabbar__icon + .weui-tabbar__label {
-  margin-top: 0!important;
-}
-.vux-demo-header-box {
-  z-index: 100;
+  text-align: center;
+  text-shadow: 0 0 2px rgba(0, 0, 0, .5);
+  font-weight: 500;
+  font-size: 16px;
   position: absolute;
-  width: 100%;
   left: 0;
-  top: 0;
-}
-
-@font-face {
-  font-family: 'vux-demo';  /* project id 70323 */
-  src: url('https://at.alicdn.com/t/font_h1fz4ogaj5cm1jor.eot');
-  src: url('https://at.alicdn.com/t/font_h1fz4ogaj5cm1jor.eot?#iefix') format('embedded-opentype'),
-  url('https://at.alicdn.com/t/font_h1fz4ogaj5cm1jor.woff') format('woff'),
-  url('https://at.alicdn.com/t/font_h1fz4ogaj5cm1jor.ttf') format('truetype'),
-  url('https://at.alicdn.com/t/font_h1fz4ogaj5cm1jor.svg#iconfont') format('svg');
-}
-
-.demo-icon {
-  font-family: 'vux-demo';
-  font-size: 20px;
-  color: #04BE02;
-}
-
-.demo-icon-big {
-  font-size: 28px;
-}
-
-.demo-icon:before {
-  content: attr(icon);
-}
-
-.router-view {
+  right: 0;
   width: 100%;
-  top: 46px;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
 }
-.vux-pop-out-enter-active,
-.vux-pop-out-leave-active,
-.vux-pop-in-enter-active,
-.vux-pop-in-leave-active {
-  will-change: transform;
-  transition: all 500ms;
-  height: 100%;
-  top: 46px;
-  position: absolute;
-  backface-visibility: hidden;
-  perspective: 1000;
-}
-.vux-pop-out-enter {
-  opacity: 0;
-  transform: translate3d(-100%, 0, 0);
-}
-.vux-pop-out-leave-active {
-  opacity: 0;
-  transform: translate3d(100%, 0, 0);
-}
-.vux-pop-in-enter {
-  opacity: 0;
-  transform: translate3d(100%, 0, 0);
-}
-.vux-pop-in-leave-active {
-  opacity: 0;
-  transform: translate3d(-100%, 0, 0);
-}
-.menu-title {
-  color: #888;
+.m-time {
+  font-size: 12px;
+  padding-top: 4px;
+  border-top: 1px solid #f0f0f0;
+  display: inline-block;
+  margin-top: 5px;
 }
 </style>

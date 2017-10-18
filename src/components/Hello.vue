@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <x-header  :left-options="{showBack: false}" :right-options="{showMore: true}" @on-click-more="showMenus = true">个人中心</x-header>
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
@@ -17,16 +18,34 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+    <div v-transfer-dom>
+      <actionsheet :menus="menus" v-model="showMenus" show-cancel></actionsheet>
+    </div>
   </div>
 </template>
 
 <script>
+import { XHeader, Actionsheet, TransferDom } from 'vux'
+
 export default {
+  directives: {
+    TransferDom
+  },
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      menus: {
+        menu1: 'Take Photo',
+        menu2: 'Choose from photos'
+      },
+      showMenus: false
     }
+  },
+  components: {
+    XHeader,
+    Actionsheet,
+    TransferDom
   }
 }
 </script>
