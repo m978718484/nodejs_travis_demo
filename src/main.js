@@ -6,9 +6,7 @@ import router from './router'
 import Vuex from 'vuex'
 import { AlertPlugin, ToastPlugin } from 'vux'
 import { sync } from 'vuex-router-sync'
-import VuePaginate from 'vue-paginate'
 
-Vue.use(VuePaginate)
 Vue.use(AlertPlugin)
 Vue.use(ToastPlugin)
 Vue.use(Vuex)
