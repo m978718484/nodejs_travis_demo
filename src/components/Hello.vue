@@ -1,72 +1,56 @@
 <template>
-  <div class="hello">
-    <x-header  :left-options="{showBack: false}" :right-options="{showMore: true}" @on-click-more="showMenus = true">个人中心</x-header>
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
-    <div v-transfer-dom>
-      <actionsheet :menus="menus" v-model="showMenus" show-cancel></actionsheet>
+  <div>
+    <div style="height:44px;">
+      <sticky ref="sticky" :offset="46" :check-sticky-support="false">
+        <tab :line-width="1">
+          <tab-item v-for="(item,index) in tabTitles" :key="index" :selected=!index @on-item-click="conentChange(index)">{{ item }}</tab-item>
+        </tab>
+      </sticky>
     </div>
+    <p v-for="i in count">{{i}}<br></p>
   </div>
 </template>
 
 <script>
-import { XHeader, Actionsheet, TransferDom } from 'vux'
-
+import { Tab, TabItem, Sticky } from 'vux'
+const list = () => ['最新公告', '行业动态', '政策法规', '综合新闻']
 export default {
-  directives: {
-    TransferDom
+  components: {
+    Tab,
+    TabItem,
+    Sticky
   },
-  name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
-      menus: {
-        menu1: 'Take Photo',
-        menu2: 'Choose from photos'
-      },
-      showMenus: false
+      showSpace: false,
+      count: 0,
+      tabTitles: list()
     }
   },
-  components: {
-    XHeader,
-    Actionsheet,
-    TransferDom
+  methods: {
+    spaceChange () {
+      this.showSpace = !this.showSpace
+    },
+    conentChange (i) {
+      this.$nextTick(() => {
+        this.count = i
+        this.$refs.sticky.bindSticky()
+      })
+    }
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
+  .space-btn {
+    padding: 5px 0;
+    margin: 10px;
+    text-align: center;
+    border: 1px red solid;
+  }
+  .space {
+    padding: 30px 0;
+    margin: 10px;
+    text-align: center;
+    border: 1px green solid;
+  }
 </style>

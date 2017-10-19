@@ -1,20 +1,14 @@
 <template>
   <div class="container">
-    <x-header @on-click-title="onItemClick" style="background-color:#FF3B3B;">
-      <span>
-        <i class="weui-icon-search" style="font-size:20px;"></i><span>搜索</span>
-      </span>
-      <x-icon slot="overwrite-left" type="navicon" size="35" style="fill:#fff;position:relative;top:-8px;left:-3px;"></x-icon>
-    </x-header>
     <br>
     <div class="menu-main">
       <flexbox>
-        <flexbox-item>
+        <flexbox-item @click.native="onItemClick('/vux')">
           <div class="flex-demo">
             <span>
                <div class="img-box"><img slot="icon" src="../assets/menu.svg"></div>
             </span><br>
-            <a href="#">系统公告</a>    
+            <span>系统公告</span>  
           </div>
         </flexbox-item>
         <flexbox-item>
@@ -22,7 +16,7 @@
             <span>
               <div class="img-box"><img slot="icon" src="../assets/globe.svg"></div>
             </span><br>
-            <a href="#">转让</a>  
+            <span>转让</span>
          </div>
       </flexbox-item>
         <flexbox-item>
@@ -30,7 +24,7 @@
             <span>
              <div class="img-box"><img slot="icon" src="../assets/aim.svg"></div>
             </span><br>
-            <a href="#">转让结果</a> 
+            <span>转让结果</span> 
           </div> 
         </flexbox-item>
         <flexbox-item>
@@ -38,7 +32,7 @@
             <span>
               <div class="img-box"><img slot="icon" src="../assets/transaction.svg"></div>
             </span><br>
-            <a href="#">招标</a> 
+            <span>招标</span> 
           </div> 
         </flexbox-item>
         <flexbox-item>
@@ -46,7 +40,7 @@
             <span>
               <div class="img-box"><img slot="icon" src="../assets/target.svg"></div>
             </span><br>
-            <a href="#">中标公示</a> 
+            <span>中标公示</span> 
           </div> 
         </flexbox-item>
       </flexbox>
@@ -57,15 +51,15 @@
             <span>
                <div class="img-box"><img slot="icon" src="../assets/customer-service.svg"></div>
             </span><br>
-            <a href="#">服务宗旨</a> 
+            <span>服务宗旨</span> 
           </div>
         </flexbox-item>
-        <flexbox-item @click.native="onItemClick">
+        <flexbox-item @click.native="onItemClick('/')">
           <div class="flex-demo">
             <span>
               <div class="img-box"><img slot="icon" src="../assets/pen.svg"></div>
             </span><br>
-            <a href="#">业务规则</a> 
+            <span>业务规则</span> 
           </div>
         </flexbox-item>
         <flexbox-item>
@@ -73,7 +67,7 @@
             <span>
               <div class="img-box"><img slot="icon" src="../assets/balance.svg"></div>
             </span><br>
-            <a href="#">政策法规</a> 
+            <span>政策法规</span> 
           </div>
         </flexbox-item>
         <flexbox-item>
@@ -81,7 +75,7 @@
             <span>
               <div class="img-box"><img slot="icon" src="../assets/lighthouse.svg"></div>
             </span><br>
-            <a href="#">操作指南</a> 
+            <span>操作指南</span> 
           </div>
         </flexbox-item>
         <flexbox-item>
@@ -98,10 +92,10 @@
       </marquee>
     </div>
     <divider></divider>
-    <flexbox style="font-size:14px;margin-left: 5px;">
+    <flexbox style="font-size:14px;margin-left: 5px;" @click.native="onItemClick('/')">
       <flexbox-item>转让项目
         </flexbox-item>
-        <flexbox-item style="text-align:right;margin-right: 5px;"><a href="#">更多>></a>
+        <flexbox-item style="text-align:right;margin-right: 5px;"><span >更多>></span>
       </flexbox-item>
     </flexbox>
     <div class="item-list">
@@ -166,7 +160,7 @@
 </template>
 
 <script>
-import { Flexbox, FlexboxItem, Marquee, MarqueeItem, Divider, Group, Cell, Search, Panel, XHeader, Actionsheet, TransferDom, Card } from 'vux'
+import { Flexbox, FlexboxItem, Marquee, MarqueeItem, Divider, Group, Cell, Panel, XHeader, Actionsheet, TransferDom, Card } from 'vux'
 export default {
   components: {
     XHeader,
@@ -180,7 +174,6 @@ export default {
     Cell,
     Panel,
     Divider,
-    Search,
     Card
   },
   data () {
@@ -192,7 +185,8 @@ export default {
     TransferDom
   },
   methods: {
-    onItemClick () {
+    onItemClick (p) {
+      this.$router.replace(p)
       console.log('on item click')
     },
     onClick (i) {
@@ -221,7 +215,7 @@ export default {
   border-radius: 4px;
   background-clip: padding-box;
 }
-.flex-demo a {
+.flex-demo span {
   color:black;
   font-size:14px;
 }
