@@ -23,7 +23,14 @@
     <div v-transfer-dom>
       <popup v-model="showSearch" position="left" width="100%">
         <div class="position-horizontal-search">
-          <search @on-submit="onSubmit" :auto-fixed="false" v-model="defaultSearch" @on-focus="onFocus" @on-cancel="onCancel"></search>
+          <search 
+            ref="search" 
+            @on-submit="onSubmit" 
+            :auto-fixed="true" 
+            v-model="defaultSearch" 
+            @on-focus="onFocus" 
+            @on-cancel="onCancel"
+            position="absolute"></search>
         </div>
       </popup>
     </div>
@@ -78,8 +85,7 @@ export default {
   },
   methods: {
     onSearchClick () {
-      this.showSearch = true
-      console.log('on item click')
+      this.$router.replace('/search')
     },
     onClickMore () {
       this.showMenu = true
@@ -112,7 +118,7 @@ export default {
     },
     leftOptions () {
       return {
-        showBack: this.route.path !== '/'
+        showBack: false // this.route.path !== '/'
       }
     },
     rightOptions () {
@@ -140,6 +146,7 @@ export default {
       if (this.route.path === '/vux') return '公告列表'
       if (this.route.path === '/demo') return '首页'
       if (this.route.path === '/t') return '测试页'
+      if (this.route.path === '/search') return '搜索'
       return this.componentName ? `Demo/${this.componentName}` : 'Demo/~~'
     }
   }

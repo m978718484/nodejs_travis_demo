@@ -113,7 +113,7 @@
           </div>
         </card>
         </flexbox-item>
-        <flexbox-item @click.native="onItemClick">
+        <flexbox-item @click.native="onItemClick('/')">
           <card>
           <img slot="header" src="http://www.srmmx.com/upload/AuctionPicture/2017/9/26/ddd34e1b-465f-43be-9b0a-5f8d91c588de.jpg" class="card-img">
           <div slot="content" class="card-padding">
@@ -141,7 +141,7 @@
           </div>
         </card>
         </flexbox-item>
-        <flexbox-item @click.native="onItemClick">
+        <flexbox-item @click.native="onItemClick('/')">
         <card>
           <img class="card-img" slot="header" src="http://www.srmmx.com/upload/AuctionPicture/2017/9/12/8d8ac6cc-8a2e-4526-95d2-8c3312f3830e.jpg">
           <div slot="content" class="card-padding">

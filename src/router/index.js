@@ -4,6 +4,7 @@ import Hello from '@/components/Hello'
 import Vux from '@/components/Vux'
 import Icon from '@/components/Icon'
 import T from '@/components/T'
+import Search from '@/components/Search'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/t',
       name: 'T',
       component: T
+    },
+    {
+      path: '/search',
+      name: 'Search',
+      component: Search
     }
   ]
 })
