@@ -10,16 +10,20 @@
       <checker-item @on-item-click="" v-for="(i,index) in ['三天内', '一周内', '一个月内', '更多时间']" :key="index" :value="index">{{i}}</checker-item>
     </checker>            
     <divider>所在地区</divider>
-    <!-- <group>
+    <group>
     <x-address :title="title" v-model="value4" raw-value :list="addressData" hide-district placeholder="请选择地址">
-      <template slot="title" slot-scope="props">
-        <span :class="props.labelClass" :style="props.labelStyle" style="height:24px;">
-          <span class="demo-icon demo-icon-big" style="font-size:20px;vertical-align:middle;"></span>
-          <span style="vertical-align:middle;">地址</span>
-       </span>
-      </template>
+      <div class="vux-cell-box">
+        <div class="weui-cell vux-tap-active weui-cell_access">
+          <div class="weui-cell__hd">
+            <span class="weui-label" style="height: 24px;">
+              <span class="demo-icon demo-icon-big" style="font-size: 20px; vertical-align: middle;"></span> 
+              <span style="vertical-align: middle;">地址</span>
+            </span> <!---->
+          </div> 
+        </div> <!---->
+      </div>
     </x-address>
-    </group> -->
+    </group>
     <x-address title="地区" v-model="value4" raw-value :list="addressData" hide-district></x-address>
     <divider>所属类别</divider>
   </div>

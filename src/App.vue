@@ -20,20 +20,6 @@
       </span>
       </x-header>
     </div>
-    <div v-transfer-dom>
-      <popup v-model="showSearch" position="left" width="100%">
-        <div class="position-horizontal-search">
-          <search 
-            ref="search" 
-            @on-submit="onSubmit" 
-            :auto-fixed="true" 
-            v-model="defaultSearch" 
-            @on-focus="onFocus" 
-            @on-cancel="onCancel"
-            position="absolute"></search>
-        </div>
-      </popup>
-    </div>
     <br>
     <br>
     <router-view></router-view>
@@ -62,7 +48,7 @@
 </template>
 
 <script>
-import { Tabbar, TabbarItem, Loading, TransferDom, Popup, Search, XHeader } from 'vux'
+import { Tabbar, TabbarItem, Loading, TransferDom, Popup, XHeader } from 'vux'
 import { mapState } from 'vuex'
 export default {
   name: 'app',
@@ -72,12 +58,12 @@ export default {
   data () {
     return {
       showSearch: false,
-      defaultSearch: 'vux'
+      defaultSearch: 'vux',
+      drawerVisibility: false
     }
   },
   components: {
     Popup,
-    Search,
     XHeader,
     Tabbar,
     TabbarItem,
