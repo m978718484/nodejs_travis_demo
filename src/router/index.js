@@ -26,7 +26,7 @@ export default new Router({
       component: Icon
     },
     {
-      path: '/t',
+      path: '/t/:id',
       name: 'T',
       component: T
     },

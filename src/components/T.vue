@@ -40,8 +40,12 @@ export default {
       }, {
         title: '远离车内毒气，日本车载空气净化器精选',
         img: 'http://www.srmmx.com/upload/AuctionPicture/2017/9/18/e578035f-df0b-406c-92f8-4ccde75c3f4f.jpg'
-      }]
+      }],
+      id: this.$route.params.id
     }
+  },
+  created () {
+    console.log(this.id)
   }
 }
 </script>

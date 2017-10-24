@@ -28,19 +28,19 @@
     <br>
     <tabbar class="vux-demo-tabbar">
       <tabbar-item link="/icon" :selected="route.path === '/icon'">
-        <img slot="icon" src="./assets/house.svg">
+        <img slot="icon" src="../static/images/house.svg">
         <span slot="label">首页</span>
       </tabbar-item>
       <tabbar-item link="/vux" :selected="route.path === '/vux'">
-        <img slot="icon" src="./assets/menu.svg">
+        <img slot="icon" src="../static/images/menu.svg">
         <span slot="label">公告</span>
       </tabbar-item>
       <tabbar-item link="/t" :selected="route.path === '/t'">
-        <img slot="icon" src="./assets/home.png">
+        <img slot="icon" src="../static/images/home.png">
         <span slot="label">关于我们</span>
       </tabbar-item>
       <tabbar-item link="/" :selected="route.path === '/'">
-        <img slot="icon" src="./assets/account.svg">
+        <img slot="icon" src="../static/images/account.svg">
         <span slot="label">我</span>
       </tabbar-item>
     </tabbar>

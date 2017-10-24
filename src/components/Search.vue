@@ -147,7 +147,7 @@ export default {
   margin-right: 6px;
 }
 .demo5-item-selected {
-  background: #ffffff url(../assets/active.png) no-repeat right bottom;
+  background: #ffffff url(../../static/images/active.png) no-repeat right bottom;
   border-color: #ff4a00;
 }
 </style>
