@@ -72,8 +72,9 @@ export default {
     onItemClick () {
       console.log('on item click')
     },
-    onClick (i) {
-      console.log(i)
+    onClick (id) {
+      this.$router.replace('/NoticeDetail/' + id)
+      console.log(id)
     },
     conentChange (i) {
       this.$nextTick(() => {

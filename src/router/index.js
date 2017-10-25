@@ -5,6 +5,7 @@ import Vux from '@/components/Vux'
 import Icon from '@/components/Icon'
 import T from '@/components/T'
 import Search from '@/components/Search'
+import NotieDetail from '@/components/NotieDetail'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/search',
       name: 'Search',
       component: Search
+    },
+    {
+      path: '/NotieDetail/:id',
+      name: 'NotieDetail',
+      component: NotieDetail
     }
   ]
 })

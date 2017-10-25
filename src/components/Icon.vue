@@ -6,13 +6,14 @@
         <flexbox-item v-for="(item,index) in items" :key="index" @click.native="indexOnItemClick(item.uri)">
           <div class="flex-demo">
             <span>
-               <div class="img-box"><img slot="icon" :src="item.src"></div>
+              <div class="img-box">
+                <img slot="icon" :src="item.src">
+              </div>
             </span><br>
             <span>{{ item.title }}</span>  
           </div>
         </flexbox-item>
       </flexbox>
-      <br>
     </div>
     <divider></divider>
     <div class="marquee-notice"> 
