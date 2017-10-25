@@ -1,5 +1,6 @@
 <template>
   <div>
+    <input type="file" accept="image/jpeg,image/jpg,image/png" capture="camera">
     <search ref="search" 
             @on-submit="onSubmit"
             @on-focus="onFocus" 
