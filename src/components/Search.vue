@@ -64,7 +64,7 @@ export default {
     },
     onCancel () {
       console.log('on cancel')
-      this.$router.replace('/icon')
+      this.$router.replace('/')
     },
     onFocus () {
       console.log('on focus')

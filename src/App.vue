@@ -4,7 +4,7 @@
       <loading v-model="isLoading"></loading>
     </div>
     <div class="header-style" style="width:100%;position:absolute;left:0;top:0;z-index:100;background-color:#FF3B3B;"> 
-      <x-header v-if="route.path === '/icon'" @on-click-title="onSearchClick">
+      <x-header v-if="route.path === '/'" @on-click-title="onSearchClick">
         <span>
           <i class="weui-icon-search" style="font-size:20px;"></i><span>搜索</span>
         </span>
@@ -27,24 +27,24 @@
     <br>
     <br>
     <tabbar class="vux-demo-tabbar">
-      <tabbar-item link="/icon" :selected="route.path === '/icon'">
+      <tabbar-item link="/" :selected="route.path === '/'">
         <img slot="icon" src="static/images/icon-home.svg">
-        <img slot="icon-active" src="static/images/icon-home-lightblue.svg">
+        <img slot="icon-active" src="static/images/icon-home-activate.svg">
         <span slot="label">首页</span>
       </tabbar-item>
-      <tabbar-item link="/vux" :selected="route.path === '/vux'">
+      <tabbar-item link="/noticelist" :selected="route.path === '/noticelist'">
         <img slot="icon" src="static/images/icon-list.svg">
-        <img slot="icon-active" src="static/images/icon-list-lightblue.svg">
+        <img slot="icon-active" src="static/images/icon-list-activate.svg">
         <span slot="label">公告</span>
       </tabbar-item>
-      <tabbar-item link="/t" :selected="route.path === '/t'">
+      <tabbar-item link="/manual" :selected="route.path === '/manual'">
         <img slot="icon" src="static/images/icon-pacman.svg">
-        <img slot="icon-active" src="static/images/icon-pacman-lightblue.svg">
+        <img slot="icon-active" src="static/images/icon-pacman-activate.svg">
         <span slot="label">操作指南</span>
       </tabbar-item>
-      <tabbar-item link="/" :selected="route.path === '/'">
+      <tabbar-item link="/user" :selected="route.path === '/user'">
         <img slot="icon" src="static/images/icon-user.svg">
-        <img slot="icon-active" src="static/images/icon-user-lightblue.svg">
+        <img slot="icon-active" src="static/images/icon-user-activate.svg">
         <span slot="label">我</span>
       </tabbar-item>
     </tabbar>
@@ -133,9 +133,10 @@ export default {
       return /tabbar/.test(this.route.path)
     },
     title () {
-      if (this.route.path === '/') return '个人中心'
-      if (this.route.path === '/vux') return '公告列表'
-      if (this.route.path === '/demo') return '首页'
+      // if (this.route.path === '/' || this.route.path === '/index') return '首页'
+      if (this.route.path === '/noticelist') return '公告列表'
+      if (this.route.path === '/user') return '个人中心'
+      if (this.route.path === '/manual') return '操作指南'
       if (this.route.path === '/t') return '测试页'
       if (this.route.path === '/search') return '搜索'
       return this.componentName ? `Demo/${this.componentName}` : 'Demo/~~'

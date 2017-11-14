@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
-import Vux from '@/components/Vux'
-import Icon from '@/components/Icon'
+import User from '@/components/User'
+import NoticeList from '@/components/NoticeList'
+import Index from '@/components/Index'
 import T from '@/components/T'
 import Search from '@/components/Search'
-import NotieDetail from '@/components/NotieDetail'
+import NoticeDetail from '@/components/NoticeDetail'
+
+import Manual from '@/pages/Manual'
 
 Vue.use(Router)
 
@@ -13,18 +15,18 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      name: 'Index',
+      component: Index
     },
     {
-      path: '/vux',
-      name: 'Vux',
-      component: Vux
+      path: '/user',
+      name: 'User',
+      component: User
     },
     {
-      path: '/icon',
-      name: 'Icon',
-      component: Icon
+      path: '/noticelist',
+      name: 'NoticeList',
+      component: NoticeList
     },
     {
       path: '/t/:id',
@@ -37,9 +39,14 @@ export default new Router({
       component: Search
     },
     {
-      path: '/NotieDetail/:id',
-      name: 'NotieDetail',
-      component: NotieDetail
+      path: '/noticedetail/:id',
+      name: 'NoticeDetail',
+      component: NoticeDetail
+    },
+    {
+      path: '/manual',
+      name: 'Manual',
+      component: Manual
     }
   ]
 })

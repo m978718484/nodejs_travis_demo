@@ -73,7 +73,7 @@ export default {
       console.log('on item click')
     },
     onClick (id) {
-      this.$router.replace('/NoticeDetail/' + id)
+      this.$router.replace('/noticedetail/' + id)
       console.log(id)
     },
     conentChange (i) {
