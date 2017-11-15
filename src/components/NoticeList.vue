@@ -2,7 +2,7 @@
   <div>
     <div style="height:44px;">
       <sticky ref="sticky" :offset="46" :check-sticky-support="false">
-        <tab :line-width="1" style="width:100%;position:absolute;left:0;top:46px;z-index:100;">
+        <tab :line-width="1" style="width:100%;position:absolute;left:0;z-index:100;">
           <tab-item v-for="(item,index) in tabTitles" :key="index" :selected=!index @on-item-click="conentChange(index)">{{ item }}</tab-item>
         </tab>
       </sticky>

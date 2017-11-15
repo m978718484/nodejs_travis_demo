@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+   <div class="space-btn">操作指南</div>
 	 <group>
 	    <div @click="show1 = true"><cell title="操作手册" value="2017-3-15"></cell></div>
 	    <div @click="show2 = true"><cell title="转让项目投标方操作流程" value="2017-3-28"></cell></div>
@@ -7,41 +8,33 @@
 	    <div @click="show4 = true"><cell title="常见问题" value="2017-3-28"></cell></div>
 	  </group>
     
-    <div v-transfer-dom>
+    <div v-transfer-dom @click="show1 = false">
       <popup v-model="show1" position="left" width="100%">
         <div class="position-horizontal-demo">
-          <span class="vux-close" @click="show1 = false"></span>
-          <br>
-          <pdf src="static/czsc.pdf" :page="page" @numPages="numPages = $event"></pdf>
-          <br>
-          <x-number title="翻页" :fillable="true" width="50%" :min="1" :max="numPages" :value="1" @on-change="change"></x-number>
-<!--           <flexbox>
-            <flexbox-item><div class="flex-paging" @click="previous">{{ page - 1 }}</div></flexbox-item>
-            <flexbox-item><div class="flex-paging" @click="next">{{ page + 1 }}</div></flexbox-item>
-          </flexbox> -->
+          <img src="static/image/m-czsc.png" style="width:100%;height:100%">
         </div>
       </popup>
     </div>
 
-    <div v-transfer-dom>
+    <div v-transfer-dom @click="show2 = false">
       <popup v-model="show2" position="left" width="100%">
-        <div class="position-horizontal-demo" @click="show2 = false">
+        <div class="position-horizontal-demo">
           <img src="static/image/m-zr-auctor-process.png" style="width:100%;height:100%">
         </div>
       </popup>
     </div>
 
-    <div v-transfer-dom>
+    <div v-transfer-dom @click="show3 = false">
       <popup v-model="show3" position="left" width="100%">
-        <div class="position-horizontal-demo" @click="show3 = false">
+        <div class="position-horizontal-demo">
           <img src="static/image/m-zr-bid-process.png" style="width:100%;height:100%">
         </div>
       </popup>
     </div>
 
-    <div v-transfer-dom>
+    <div v-transfer-dom @click="show4 = false">
       <popup v-model="show4" position="left" width="100%">
-        <div class="position-horizontal-demo" @click="show4 = false">
+        <div class="position-horizontal-demo">
           <img src="static/image/fqa.png" style="width:100%;height:100%">
         </div>
       </popup>
@@ -50,7 +43,7 @@
   </div>
 </template>	
 <script>
-import { TransferDom, Popup, Cell, XButton, XSwitch, XNumber, Group, Flexbox, FlexboxItem } from 'vux'
+import { TransferDom, Divider, Popup, Cell, XButton, XSwitch, XNumber, Group, Flexbox, FlexboxItem } from 'vux'
 import pdf from 'vue-pdf'
 
 import api from '../fetch/index'
@@ -71,6 +64,7 @@ export default {
     }
   },
   components: {
+    Divider,
     XNumber,
     pdf,
     Flexbox,
@@ -117,12 +111,10 @@ export default {
   }
 }
 </script>
-<style type="text/css">
-.flex-paging {
+<style scoped>
+.space-btn {
+  padding: 0 0;
+  margin: 10px;
   text-align: center;
-  color: #fff;
-  background-color: #20b907;
-  border-radius: 4px;
-  background-clip: padding-box;
 }
 </style>

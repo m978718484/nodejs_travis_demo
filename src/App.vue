@@ -3,7 +3,7 @@
     <div v-transfer-dom>
       <loading v-model="isLoading"></loading>
     </div>
-    <div class="header-style" style="width:100%;position:absolute;left:0;top:0;z-index:100;background-color:#FF3B3B;"> 
+<!--     <div class="header-style" style="width:100%;position:absolute;left:0;top:0;z-index:100;background-color:#FF3B3B;"> 
       <x-header v-if="route.path === '/'" @on-click-title="onSearchClick">
         <span>
           <i class="weui-icon-search" style="font-size:20px;"></i><span>搜索</span>
@@ -21,7 +21,7 @@
       </x-header>
     </div>
     <br>
-    <br>
+    <br> -->
     <router-view></router-view>
     <br>
     <br>

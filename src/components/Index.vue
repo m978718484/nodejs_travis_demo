@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <search @on-focus="onFocus"></search>
     <br>
     <div class="menu-main">
       <flexbox v-for="(items,index) in indexList" :key="index" style="height:90px;">
@@ -46,13 +47,26 @@
         </flexbox-item>
       </flexbox>
     </div>
+
+
+    <div v-transfer-dom @click="show1 = false">
+      <popup v-model="show1" position="left" width="100%">
+        <div class="position-horizontal-demo">
+          <div class="position-horizontal-demo">
+            <img src="static/image/purpose.png" style="width:100%;height:100%">
+          </div>
+        </div>
+      </popup>
+    </div>
   </div>
 </template>
 
 <script>
-import { Flexbox, FlexboxItem, Marquee, MarqueeItem, Divider, Group, Cell, Panel, XHeader, Actionsheet, TransferDom, Card } from 'vux'
+import { Flexbox, FlexboxItem, Marquee, MarqueeItem, Popup, Search, Divider, Group, Cell, Panel, XHeader, Actionsheet, TransferDom, Card } from 'vux'
 export default {
   components: {
+    Popup,
+    Search,
     XHeader,
     Actionsheet,
     TransferDom,
@@ -68,6 +82,7 @@ export default {
   },
   data () {
     return {
+      show1: false,
       asyncCount: [],
       indexList: [ [
         { uri: '/noticelist', title: '系统公告', src: 'static/images/menu.svg' },
@@ -77,8 +92,8 @@ export default {
         { uri: '', title: '中标公示', src: 'static/images/target.svg' }
       ],
       [
-        { uri: '', title: '服务宗旨', src: 'static/images/customer-service.svg' },
-        { uri: '', title: '业务规则', src: 'static/images/pen.svg' },
+        { uri: '#', title: '服务宗旨', src: 'static/images/customer-service.svg' },
+        { uri: '/rule', title: '业务规则', src: 'static/images/pen.svg' },
         { uri: '', title: '政策法规', src: 'static/images/balance.svg' },
         { uri: '/manual', title: '操作指南', src: 'static/images/lighthouse.svg' },
         { uri: '', title: '', src: '' }
@@ -94,13 +109,26 @@ export default {
       this.$router.replace('/t/' + id)
     },
     indexOnItemClick (path) {
-      this.$router.replace(path)
+      if (path === '#') {
+        this.show1 = true
+      } else {
+        this.$router.replace(path)
+      }
     },
     onClick (i) {
       console.log(i)
     },
     onImgError (item, $event) {
       console.log(item, $event)
+    },
+    onSearchClick () {
+      this.$router.replace('/search')
+    },
+    onClickMore () {
+      this.showMenu = true
+    },
+    onFocus () {
+      this.$router.replace('/search')
     }
   },
   mounted () {

@@ -1,47 +1,91 @@
 <template>
   <div>
-    <input type="checkbox" v-model="show">
-    <select v-model="src" style="width: 30em">
-      <option v-for="item in pdfList" :value="item" v-text="item"></option>
-    </select>
-    <input v-model.number="page" type="number" style="width: 5em"> /{{numPages}}
-    <button @click="rotate += 90">&#x27F3;</button>
-    <button @click="rotate -= 90">&#x27F2;</button>
-    <button @click="$refs.pdf.print()">print</button>
-    <div style="width: 100%;height:100%;">
-      <div v-if="loadedRatio > 0 && loadedRatio < 1" style="background-color: green; color: white; text-align: center" :style="{ width: loadedRatio * 100 + '%' }">{{ Math.floor(loadedRatio * 100) }}%</div>
-      <pdf v-if="show" ref="pdf" :src="src" :page="page" :rotate="rotate" @password="password" @progress="loadedRatio = $event" @error="error" @numPages="numPages = $event"></pdf>
+  	<div class="space-btn">业务规则</div>
+  	<group>
+	    <div @click="show1 = true"><cell title="钜商网采购招标服务平台注册须知" value="2017-3-15"></cell></div>
+	    <div @click="show2 = true"><cell title="钜商网采购招标服务平台网络竞价须知" value="2017-3-28"></cell></div>
+	    <div @click="show3 = true"><cell title="钜商网转让方资质材料" value="2017-3-28"></cell></div>
+	    <div @click="show4 = true"><cell title="钜商网回收方资质材料" value="2017-3-28"></cell></div>
+	    <div @click="show5 = true"><cell title="交易合同（模板-供交易双方参考）" value="2017-3-29"></cell></div>
+	  </group>
+
+    <div v-transfer-dom @click="show1 = false">
+      <popup v-model="show1" position="left" width="100%">
+        <div class="position-horizontal-demo">
+          <div class="position-horizontal-demo">
+            <img src="static/image/sign-up-notice.png" style="width:100%;height:100%">
+          </div>
+        </div>
+      </popup>
+    </div>
+    <div v-transfer-dom @click="show2 = false">
+      <popup v-model="show2" position="left" width="100%">
+        <div class="position-horizontal-demo">
+          <div class="position-horizontal-demo">
+            <img src="static/image/r-wljjxz.png" style="width:100%;height:100%">
+          </div>
+        </div>
+      </popup>
+    </div>
+    <div v-transfer-dom @click="show3 = false">
+      <popup v-model="show3" position="left" width="100%">
+        <div class="position-horizontal-demo">
+          <div class="position-horizontal-demo">
+            <img src="static/image/r-zrfzzcl.png" style="width:100%;height:100%">
+          </div>
+        </div>
+      </popup>
+    </div>
+    <div v-transfer-dom @click="show4 = false">
+      <popup v-model="show4" position="left" width="100%">
+        <div class="position-horizontal-demo">
+          <div class="position-horizontal-demo">
+            <img src="static/image/r-hsfzzcl.png" style="width:100%;height:100%">
+          </div>
+        </div>
+      </popup>
+    </div>
+    <div v-transfer-dom @click="show5 = false">
+      <popup v-model="show5" position="left" width="100%">
+        <div class="position-horizontal-demo">
+          <div class="position-horizontal-demo">
+            <img src="static/image/waste-transaction-contract.png" style="width:100%;height:100%">
+          </div>
+        </div>
+      </popup>
     </div>
   </div>
 </template>
 <script>
-import pdf from 'vue-pdf'
+import { TransferDom, Popup, Cell, Group } from 'vux'
 
 export default {
-  components: {
-    pdf: pdf
+  directives: {
+    TransferDom
   },
   data () {
     return {
-      show: true,
-      pdfList: [
-        'static/v.pdf',
-        'data:application/pdf;base64,JVBERi0xLjUKJbXtrvsKMyAwIG9iago8PCAvTGVuZ3RoIDQgMCBSCiAgIC9GaWx0ZXIgL0ZsYXRlRGVjb2RlCj4+CnN0cmVhbQp4nE2NuwoCQQxF+/mK+wMbk5lkHl+wIFislmIhPhYEi10Lf9/MVgZCAufmZAkMppJ6+ZLUuFWsM3ZXxvzpFNaMYjEriqpCtbZSBOsDzw0zjqPHZYtTrEmz4eto7/0K54t7GfegOGCBbBdDH3+y2zsMsVERc9SoRkXORqKGJupS6/9OmMIUfgypJL4KZW5kc3RyZWFtCmVuZG9iago0IDAgb2JqCiAgIDEzOAplbmRvYmoKMiAwIG9iago8PAogICAvRXh0R1N0YXRlIDw8CiAgICAgIC9hMCA8PCAvQ0EgMC42MTE5ODcgL2NhIDAuNjExOTg3ID4+CiAgICAgIC9hMSA8PCAvQ0EgMSAvY2EgMSA+PgogICA+Pgo+PgplbmRvYmoKNSAwIG9iago8PCAvVHlwZSAvUGFnZQogICAvUGFyZW50IDEgMCBSCiAgIC9NZWRpYUJveCBbIDAgMCA1OTUuMjc1NTc0IDg0MS44ODk3NzEgXQogICAvQ29udGVudHMgMyAwIFIKICAgL0dyb3VwIDw8CiAgICAgIC9UeXBlIC9Hcm91cAogICAgICAvUyAvVHJhbnNwYXJlbmN5CiAgICAgIC9DUyAvRGV2aWNlUkdCCiAgID4+CiAgIC9SZXNvdXJjZXMgMiAwIFIKPj4KZW5kb2JqCjEgMCBvYmoKPDwgL1R5cGUgL1BhZ2VzCiAgIC9LaWRzIFsgNSAwIFIgXQogICAvQ291bnQgMQo+PgplbmRvYmoKNiAwIG9iago8PCAvQ3JlYXRvciAoY2Fpcm8gMS4xMS4yIChodHRwOi8vY2Fpcm9ncmFwaGljcy5vcmcpKQogICAvUHJvZHVjZXIgKGNhaXJvIDEuMTEuMiAoaHR0cDovL2NhaXJvZ3JhcGhpY3Mub3JnKSkKPj4KZW5kb2JqCjcgMCBvYmoKPDwgL1R5cGUgL0NhdGFsb2cKICAgL1BhZ2VzIDEgMCBSCj4+CmVuZG9iagp4cmVmCjAgOAowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDA1ODAgMDAwMDAgbiAKMDAwMDAwMDI1MiAwMDAwMCBuIAowMDAwMDAwMDE1IDAwMDAwIG4gCjAwMDAwMDAyMzAgMDAwMDAgbiAKMDAwMDAwMDM2NiAwMDAwMCBuIAowMDAwMDAwNjQ1IDAwMDAwIG4gCjAwMDAwMDA3NzIgMDAwMDAgbiAKdHJhaWxlcgo8PCAvU2l6ZSA4CiAgIC9Sb290IDcgMCBSCiAgIC9JbmZvIDYgMCBSCj4+CnN0YXJ0eHJlZgo4MjQKJSVFT0YK'
-      ],
-      src: '',
-      loadedRatio: 0,
       page: 1,
-      numPages: 0,
-      rotate: 0
+      show1: false,
+      show2: false,
+      show3: false,
+      show4: false,
+      show5: false,
+      htmlData: '',
+      numPages: 0
     }
   },
-  methods: {
-    password: function (updatePassword, reason) {
-      updatePassword(prompt('password is "test"'))
-    },
-    error: function (err) {
-      console.log(err)
-    }
+  components: {
+    Popup,
+    Cell,
+    Group
   }
 }
 </script>
+<style scoped>
+.space-btn {
+  padding: 0 0;
+  margin: 10px;
+  text-align: center;
+}
+</style>
