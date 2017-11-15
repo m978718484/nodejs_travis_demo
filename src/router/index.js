@@ -8,10 +8,12 @@ import Search from '@/components/Search'
 import NoticeDetail from '@/components/NoticeDetail'
 
 import Manual from '@/pages/Manual'
+import Rule from '@/pages/Rule'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -39,7 +41,7 @@ export default new Router({
       component: Search
     },
     {
-      path: '/noticedetail/:id',
+      path: '/noticedetail',
       name: 'NoticeDetail',
       component: NoticeDetail
     },
@@ -47,6 +49,11 @@ export default new Router({
       path: '/manual',
       name: 'Manual',
       component: Manual
+    },
+    {
+      path: '/rule',
+      name: 'Rule',
+      component: Rule
     }
   ]
 })
