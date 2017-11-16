@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <search @on-focus="onFocus"></search>
+    <search @on-focus="onFocus" placeholder="项目名称、所在地区、所属类别"></search>
     <br>
     <div class="menu-main">
       <flexbox v-for="(items,index) in indexList" :key="index" style="height:90px;">
@@ -49,12 +49,13 @@
     </div>
 
 
-    <div v-transfer-dom @click="show1 = false">
-      <popup v-model="show1" position="left" width="100%">
+    <div v-transfer-dom>
+      <popup v-if="show1" v-model="show1" position="left" width="100%">
         <div class="position-horizontal-demo">
-          <div class="position-horizontal-demo">
+          <!-- <div class="position-horizontal-demo">
             <img src="static/image/purpose.png" style="width:100%;height:100%">
-          </div>
+          </div> -->
+          <laws></laws>
         </div>
       </popup>
     </div>
@@ -63,6 +64,8 @@
 
 <script>
 import { Flexbox, FlexboxItem, Marquee, MarqueeItem, Popup, Search, Divider, Group, Cell, Panel, XHeader, Actionsheet, TransferDom, Card } from 'vux'
+import Laws from '../pages/Laws'
+
 export default {
   components: {
     Popup,
@@ -78,7 +81,8 @@ export default {
     Cell,
     Panel,
     Divider,
-    Card
+    Card,
+    Laws
   },
   data () {
     return {

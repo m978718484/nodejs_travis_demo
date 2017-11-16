@@ -9,6 +9,7 @@ import NoticeDetail from '@/components/NoticeDetail'
 
 import Manual from '@/pages/Manual'
 import Rule from '@/pages/Rule'
+import Laws from '@/pages/Laws'
 
 Vue.use(Router)
 
@@ -53,6 +54,11 @@ export default new Router({
       path: '/rule',
       name: 'Rule',
       component: Rule
+    },
+    {
+      path: '/laws',
+      name: 'Laws',
+      component: Laws
     }
   ]
 })

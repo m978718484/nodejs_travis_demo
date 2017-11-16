@@ -45,7 +45,7 @@
       <tabbar-item link="/user" :selected="route.path === '/user'">
         <img slot="icon" src="static/images/icon-user.svg">
         <img slot="icon-active" src="static/images/icon-user-activate.svg">
-        <span slot="label">我</span>
+        <span slot="label">我的</span>
       </tabbar-item>
     </tabbar>
  </div>
