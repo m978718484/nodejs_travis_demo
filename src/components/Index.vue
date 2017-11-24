@@ -19,7 +19,7 @@
     <divider></divider>
     <div class="marquee-notice"> 
       <marquee >
-        <marquee-item v-for="i in asyncCount" :key="i.id" @click.native="onClick(i.id)" class="item-title">公告： {{ i.title }}
+        <marquee-item v-for="i in asyncCount" :key="i.id" @click.native="onClick(i.title)" class="item-title">{{ i.category }}： {{ i.title }}
         </marquee-item>
       </marquee>
     </div>
@@ -120,6 +120,7 @@ export default {
       }
     },
     onClick (i) {
+      alert(i)
       console.log(i)
     },
     onImgError (item, $event) {
@@ -137,7 +138,7 @@ export default {
   },
   mounted () {
     setTimeout(() => {
-      this.asyncCount = [{ id: 1, title: 'xxx' }, { id: 2, title: 'yyyy' }, { id: 3, title: 'zzzz' }]
+      this.asyncCount = [{ id: 1, category: '转让', title: '【天津】电子元件物料及PCB光板转让项目  报名中【11-30 17:30报名截止】' }, { id: 2, category: '公告', title: '关于《电子元件物料及PCB光板转让项目》项目公告补遗' }, { id: 3, category: '招标', title: '【河南·郑州】【公开】河南郑州鸿富锦精密电子(郑州)有限公司生活垃圾招标项目' }]
     }, 1000)
   }
 }
