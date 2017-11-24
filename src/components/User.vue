@@ -1,78 +1,95 @@
 <template>
   <div>
-    <h4>Universal自动贴片机、锡膏印刷机、SONY检查机等共17台SMT汰旧设备转让</h4>
-    <img src="http://www.srmmx.com/upload/AuctionPicture/2017/9/26/ddd34e1b-465f-43be-9b0a-5f8d91c588de.jpg" height="50%" width="100%">
-   <!--  <cell primary="content">
-      <div class="timeline">
-        <timeline>
-          <timeline-item>
-            <p class="recent">已结束</p>
-            <p class="recent">2017-10-20 11:30</p>
-          </timeline-item> 
-          <timeline-item>
-            <p>竞价预计结束时间</p>
-            <p>2017-10-20 11:20</p>
-          </timeline-item> 
-          <timeline-item>
-            <p>竞价开始时间</p>
-            <p>2017-10-20 10:50</p>
-          </timeline-item>
-          <timeline-item>
-            <p>保证金缴纳截止时间</p>
-            <p>2017-10-19 17:30</p>
-          </timeline-item>
-          <timeline-item>
-            <p>报名截止时间</p>
-            <p>2017-10-13 17:30</p>
-          </timeline-item>
-        </timeline>
-      </div>
-    </cell> -->
-    <flow>
-      <flow-state title="报名" is-done></flow-state>
-      <flow-line tip="2017/09/01 15:30 截止" tip-direction="top" :line-span="60" process-span="60" ></flow-line>
+    <group>
+      <cell title="我的账号" @click.native="onClick"></cell>
+    </group>
 
-      <flow-state title="准备"></flow-state>
-      <flow-line></flow-line>
+    <group>
+      <cell is-link>
+        <span slot="title" style="color:green;"><span style="vertical-align:middle;">消息</span> <badge text="2"></badge></span>
+      </cell>
+      <cell title="通知" is-link></cell>
+    </group>
+    <group>
+      <cell
+      title="已报名"
+      is-link
+      :border-intent="false"
+      :arrow-direction="showContent001 ? 'up' : 'down'"
+      @click.native="showContent001 = !showContent001"></cell>
 
-      <flow-state title="竞价"></flow-state>
-      <flow-line ></flow-line>
+      <p class="slide" :class="showContent001?'animate':''">blablabla...<br/>blablabla...<br/>blablabla...<br/>blablabla...</p>
+      <cell
+      title="历  史"
+      is-link
+      :border-intent="false"
+      :arrow-direction="showContent004 ? 'up' : 'down'"
+      @click.native="showContent004 = !showContent004"></cell>
 
-      <flow-state title="结束"></flow-state>
-    </flow>
+      <p class="slide" :class="showContent004?'animate':''">blablabla...<br/>blablabla...<br/>blablabla...<br/>blablabla...</p>
+    </group>
+    <group>
+      <x-switch title="通知" v-model="Notifications"></x-switch>
+      <!-- <cell title="通知" value="已开启"></cell> -->
+    </group>
   </div>
 </template>
-
 <script>
-import { Cell, Timeline, TimelineItem, Step, StepItem, Flow, FlowState, FlowLine } from 'vux'
+import { Cell, CellBox, XSwitch, CellFormPreview, Group, Badge } from 'vux'
 export default {
+  mounted () {
+    setTimeout(() => {
+      this.money = -1024
+    }, 2000)
+  },
   components: {
-    Timeline,
-    TimelineItem,
+    Group,
     Cell,
-    Step,
-    StepItem,
-    Flow,
-    FlowState,
-    FlowLine
+    CellFormPreview,
+    XSwitch,
+    CellBox,
+    Badge
+  },
+  methods: {
+    onClick () {
+      console.log('on click')
+    }
   },
   data () {
     return {
-      count: 3,
-      step1: 0
+      list: [{
+        label: 'Apple',
+        value: '3.29'
+      }, {
+        label: 'Banana',
+        value: '1.04'
+      }, {
+        label: 'Fish',
+        value: '8.00'
+      }],
+      Notifications: true,
+      showContent001: false,
+      showContent002: false,
+      showContent003: false,
+      showContent004: false
     }
   }
 }
 </script>
 
-<style lang="less">
-.timeline {
-  p {
-    color: #888;
-    font-size: 0.8rem;
-  }
-  .recent {
-    color: rgb(4, 190, 2)
-  }
+<style scoped>
+.sub-item {
+  color: #888;
+}
+.slide {
+  padding: 0 20px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height .5s cubic-bezier(0, 1, 0, 1) -.1s;
+}
+.animate {
+  max-height: 9999px;
+  transition-timing-function: cubic-bezier(0.5, 0, 1, 0);
+  transition-delay: 0s;
 }
 </style>

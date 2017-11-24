@@ -42,7 +42,7 @@
         <img slot="icon-active" src="static/images/icon-pacman-activate.svg">
         <span slot="label">操作指南</span>
       </tabbar-item>
-      <tabbar-item link="/user" :selected="route.path === '/user'">
+      <tabbar-item link="/user" :selected="route.path === '/user'" show-dot>
         <img slot="icon" src="static/images/icon-user.svg">
         <img slot="icon-active" src="static/images/icon-user-activate.svg">
         <span slot="label">我的</span>

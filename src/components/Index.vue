@@ -19,7 +19,8 @@
     <divider></divider>
     <div class="marquee-notice"> 
       <marquee >
-        <marquee-item v-for="i in asyncCount" :key="i.id" @click.native="onClick(i.title)" class="item-title">{{ i.category }}： {{ i.title }}
+        <marquee-item v-for="i in asyncCount" :key="i.id" @click.native="onClick(i.title)" class="item-title">
+          {{ i.category }}： {{ i.title }}
         </marquee-item>
       </marquee>
     </div>
@@ -49,13 +50,13 @@
     </div>
 
 
-    <div v-transfer-dom>
+    <div v-transfer-dom @click="show1 = false">
       <popup v-if="show1" v-model="show1" position="left" width="100%">
         <div class="position-horizontal-demo">
-          <!-- <div class="position-horizontal-demo">
+          <div class="position-horizontal-demo">
             <img src="static/image/purpose.png" style="width:100%;height:100%">
-          </div> -->
-          <laws></laws>
+          </div>
+          <!-- <laws></laws> -->
         </div>
       </popup>
     </div>
