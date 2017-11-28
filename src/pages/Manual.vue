@@ -32,14 +32,16 @@
       </popup>
     </div>
 
-    <div v-transfer-dom @click="show4 = false">
+    <div v-transfer-dom>
       <popup v-model="show4" position="left" width="100%">
         <div class="position-horizontal-demo">
           <img src="static/image/fqa.png" style="width:100%;height:100%">
+          <div style="padding: 15px;">
+          <x-button @click.native="show4 = false" plain type="primary"> Close Me </x-button>
+        </div>
         </div>
       </popup>
     </div>
-
   </div>
 </template>	
 <script>

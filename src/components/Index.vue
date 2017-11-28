@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <search @on-focus="onFocus" placeholder="项目名称、所在地区、所属类别"></search>
-    <br>
+    <swiper loop auto :list="baseList" index="0"></swiper>
     <div class="menu-main">
       <flexbox v-for="(items,index) in indexList" :key="index" style="height:90px;">
         <flexbox-item v-for="(item,index) in items" :key="index" @click.native="indexOnItemClick(item.uri)">
@@ -64,7 +64,7 @@
 </template>
 
 <script>
-import { Flexbox, FlexboxItem, Marquee, MarqueeItem, Popup, Search, Divider, Group, Cell, Panel, XHeader, Actionsheet, TransferDom, Card } from 'vux'
+import { Flexbox, FlexboxItem, Marquee, MarqueeItem, Popup, Search, Divider, Group, Cell, Panel, XHeader, Actionsheet, TransferDom, Card, Swiper, SwiperItem } from 'vux'
 import Laws from '../pages/Laws'
 
 export default {
@@ -83,12 +83,17 @@ export default {
     Panel,
     Divider,
     Card,
-    Laws
+    Laws,
+    Swiper,
+    SwiperItem
   },
   data () {
     return {
       show1: false,
       asyncCount: [],
+      baseList: [ {url: 'javascript:', img: 'http://www.srmmx.com/webdoc/upload/AuctionPicture/2017/11/1/09116cb4-e858-415b-85c4-beb84c739ee8.jpg', title: '电子元件物料及PCB光板转让项目'},
+      { url: 'javascript:', img: 'http://www.srmmx.com/webdoc/upload/AuctionPicture/2017/11/13/d3d2f3bb-0524-4a83-a2ea-1a63b44af72c.jpg', title: '报废灭火器转让（深圳龙华）' },
+      { url: 'javascript:', img: 'http://www.srmmx.com/webdoc/upload/AuctionPicture/2017/11/14/fd312ec0-64a5-454a-a704-13b3b9fc298b.jpg', title: '河南济源富泰华精密电子（济源）有限公司废铝屑转让' } ],
       indexList: [ [
         { uri: '/noticelist', title: '系统公告', src: 'static/images/menu.svg' },
         { uri: '', title: '转让', src: 'static/images/globe.svg' },
