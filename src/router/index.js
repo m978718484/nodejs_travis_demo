@@ -10,6 +10,7 @@ import NoticeDetail from '@/components/NoticeDetail'
 import Manual from '@/pages/Manual'
 import Rule from '@/pages/Rule'
 import Laws from '@/pages/Laws'
+import Purpose from '@/pages/Purpose'
 
 Vue.use(Router)
 
@@ -59,6 +60,11 @@ export default new Router({
       path: '/laws',
       name: 'Laws',
       component: Laws
+    },
+    {
+      path: '/purpose',
+      name: 'Purpose',
+      component: Purpose
     }
   ]
 })

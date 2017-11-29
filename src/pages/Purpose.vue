@@ -40,6 +40,66 @@
 
       <flow-state title="结束"></flow-state>
     </flow>
+       <flow>
+      <flow-state title="报名" is-done></flow-state>
+      <flow-line tip="2017/09/01 15:30 截止" tip-direction="top" :line-span="60" process-span="60" ></flow-line>
+
+      <flow-state title="准备"></flow-state>
+      <flow-line></flow-line>
+
+      <flow-state title="竞价"></flow-state>
+      <flow-line ></flow-line>
+
+      <flow-state title="结束"></flow-state>
+    </flow>
+       <flow>
+      <flow-state title="报名" is-done></flow-state>
+      <flow-line tip="2017/09/01 15:30 截止" tip-direction="top" :line-span="60" process-span="60" ></flow-line>
+
+      <flow-state title="准备"></flow-state>
+      <flow-line></flow-line>
+
+      <flow-state title="竞价"></flow-state>
+      <flow-line ></flow-line>
+
+      <flow-state title="结束"></flow-state>
+    </flow>
+       <flow>
+      <flow-state title="报名" is-done></flow-state>
+      <flow-line tip="2017/09/01 15:30 截止" tip-direction="top" :line-span="60" process-span="60" ></flow-line>
+
+      <flow-state title="准备"></flow-state>
+      <flow-line></flow-line>
+
+      <flow-state title="竞价"></flow-state>
+      <flow-line ></flow-line>
+
+      <flow-state title="结束"></flow-state>
+    </flow>
+       <flow>
+      <flow-state title="报名" is-done></flow-state>
+      <flow-line tip="2017/09/01 15:30 截止" tip-direction="top" :line-span="60" process-span="60" ></flow-line>
+
+      <flow-state title="准备"></flow-state>
+      <flow-line></flow-line>
+
+      <flow-state title="竞价"></flow-state>
+      <flow-line ></flow-line>
+
+      <flow-state title="结束"></flow-state>
+    </flow>
+       <flow>
+      <flow-state title="报名" is-done></flow-state>
+      <flow-line tip="2017/09/01 15:30 截止" tip-direction="top" :line-span="60" process-span="60" ></flow-line>
+
+      <flow-state title="准备"></flow-state>
+      <flow-line></flow-line>
+
+      <flow-state title="竞价"></flow-state>
+      <flow-line ></flow-line>
+
+      <flow-state title="结束"></flow-state>
+    </flow>
   </div>
 </template>
 
