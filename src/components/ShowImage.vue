@@ -2,45 +2,29 @@
   <div>
     <group>
       <div v-for="(item, index) in mylist">
-        <cell @click.native="onclick('show-image' + index)" :title="item.title" :value="item.value"></cell>
-        <div v-transfer-dom>
-          <popup :id="'show-image' + index" position="left" width="100%">
-            <div class="position-horizontal-demo">
-              <img :src="item.src" style="width:100%;height:100%">
-              <div class="side-bar" @click="onclick('show-image' + index)"> 
-                返回
-              </div>
-            </div>
-          </popup>
-        </div>  
+        <cell @click.native="show(index)" :title="item.title" :value="item.value"></cell>
       </div>
     </group>
+    <div v-transfer-dom>
+      <previewer :list="mylist" ref="previewer"></previewer>
+    </div>
   </div>
 </template>
 <script>
-import { TransferDom, Popup, Cell, Group } from 'vux'
+import { Previewer, TransferDom, Popup, Cell, Group } from 'vux'
 
 export default {
   name: 'ShowImage',
   directives: {
     TransferDom
   },
-  data () {
-    return {
-      mylist: this.list
-    }
-  },
   methods: {
-    onclick (index) {
-      var display = document.getElementById(index).style.display
-      if (display) {
-        document.getElementById(index).style.display = ''
-      } else {
-        document.getElementById(index).style.display = 'none'
-      }
+    show (index) {
+      this.$refs.previewer.show(index)
     }
   },
   components: {
+    Previewer,
     Popup,
     Cell,
     Group
@@ -51,6 +35,11 @@ export default {
       default () {
         return []
       }
+    }
+  },
+  data () {
+    return {
+      mylist: this.list
     }
   }
 }
